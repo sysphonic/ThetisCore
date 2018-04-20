@@ -1,0 +1,480 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ThetisCoreLib</name>
+    </assembly>
+    <members>
+        <member name="T:Sysphonic.Common.CommonUtil">
+            <summary>Common Utility Library class.</summary>
+        </member>
+        <member name="M:Sysphonic.Common.CommonUtil.GetAppPath">
+            <summary>Gets path of the Application directory.</summary>
+            <returns>Path of the Application directory.</returns>
+        </member>
+        <member name="M:Sysphonic.Common.CommonUtil.GetPreviousProcess">
+            <summary>Gets previous process.</summary>
+            <remarks>http://www.atmarkit.co.jp/fdotnet/dotnettips/151winshow/winshow.html</remarks>
+            <returns>Previous process.</returns>
+        </member>
+        <member name="M:Sysphonic.Common.CommonUtil.WakeupWindow(System.IntPtr)">
+            <summary>Sets the specified external window to foreground.</summary>
+            <remarks>http://www.atmarkit.co.jp/fdotnet/dotnettips/151winshow/winshow.html</remarks>
+            <param name="hWnd">Handle of the target window.</param>
+        </member>
+        <member name="M:Sysphonic.Common.CommonUtil.TrimVersion(System.String)">
+            <summary>Gets 3 section formatted version string from 4 sections.</summary>
+            <param name="productVer">4 or more section formatted version string.</param>
+            <returns>3 section formatted version string like "x.x.x".</returns>
+        </member>
+        <member name="M:Sysphonic.Common.CommonUtil.EscapeFileName(System.String)">
+            <summary>Escapes invalid characters in a file name.</summary>
+            <param name="s">Target file name.</param>
+            <returns>Escaped file name.</returns>
+        </member>
+        <member name="T:ThetisCore.Lib.ConfigBase">
+            <summary>Configuration Base class.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.ConfigBase.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.ConfigBase.Save">
+            <summary>Saves all Information Items.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.ConfigBase.Load(ThetisCore.Lib.ConfigBase)">
+            <summary>Loads Configuration Manager.</summary>
+            <param name="subObj">Instance of sub-class.</param>
+            <param name="fileName">Config file name.</param>
+            <returns>Loaded Configuration Manager.</returns>
+        </member>
+        <member name="P:ThetisCore.Lib.ConfigBase.CONFIG_FILE_NAME">
+            <summary>Configuration file name.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.ConfigManager">
+            <summary>Configuration Manager class.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.ConfigManager._maxItemsOnPanel">
+            <summary>Max. of the Information Items.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.ConfigManager.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.ConfigManager.Load">
+            <summary>Loads Configuration.</summary>
+            <returns>Configuration Manager.</returns>
+        </member>
+        <member name="P:ThetisCore.Lib.ConfigManager.CONFIG_FILE_NAME">
+            <summary>Configuration file name.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.ConfigManager.MaxItemsOnPanel">
+            <summary>Max. of the Information Items.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.Def">
+            <summary>Common Definition class.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.Def.REG_PATH">
+            <summary>Registry Path.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.Def.PACKAGE_DIR_NAME">
+            <summary>Package sub directory.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.Def.INFO_ITEMS_FILE_NAME">
+            <summary>Information file name.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.Def.DIST_ITEMS_FILE_NAME">
+            <summary>Distribution file name.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.Def.APP_DATA_FOLDER_NAME">
+            <summary>Sub directory of application data.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Def.COMMON_APP_DATA_DIR">
+            <summary>Path to application data.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Def.APP_DATA_DIR">
+            <summary>Path to application data.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Def.APP_DATA_SUB_DIR">
+            <summary>Substring of path to application data.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Def.INFO_ROOT_DIR">
+            <summary>Root path of the informations.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Def.ZEPT_DIST_ROOT_DIR">
+            <summary>Root path of the Zeptair Distribution.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Def.INFO_ITEMS_FILE_PATH">
+            <summary>Information file path.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Def.DIST_ITEMS_FILE_PATH">
+            <summary>Distribution file path.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Def.CONFIG_ROOT_DIR">
+            <summary>Root path of the Configuration for User.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Def.COMMON_CONFIG_ROOT_DIR">
+            <summary>Root path of the Common Configuration.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Def.INSTALL_DIR">
+            <summary>Install Path.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.EasyTrustPolicy">
+            <summary>Custom CertificatePolicy to trust servers.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.Enigma">
+            <summary>Custom Encrypt / Decrypt class.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.Enigma.params_in">
+            <summary>Encrypt parameter (IN)</summary>.
+        </member>
+        <member name="F:ThetisCore.Lib.Enigma.params_out">
+            <summary>Encrypt parameter (OUT)</summary>.
+        </member>
+        <member name="M:ThetisCore.Lib.Enigma.Encrypt(System.String)">
+            <summary>Encrypts the argument.</summary>.
+            <param name="text">Target string.</param>
+        </member>
+        <member name="M:ThetisCore.Lib.Enigma.Decrypt(System.String)">
+            <summary>Dencrypts the argument.</summary>.
+            <param name="text">Target code.</param>
+        </member>
+        <member name="T:ThetisCore.Lib.IIpcConfService">
+            <summary>Interface of the IPC-Remoting service of ThetisCore.Conf process.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.IIpcConfService.FireEventTaskProcClosing">
+            <summary>Fires event of updating list of the information items.</summary>
+        </member>
+        <member name="E:ThetisCore.Lib.IIpcConfService.TaskProcClosing">
+            <summary>Event of Task process closing.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.IIpcTaskService">
+            <summary>Interface of the IPC-Remoting service of ThetisCore.Task process.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.IIpcTaskService.RemoveInfoItems(System.Int32[])">
+            <summary>Removes InfoItems specified by IDs.</summary>
+            <param name="itemIds">IDs of the target InfoItems.</param>
+        </member>
+        <member name="M:ThetisCore.Lib.IIpcTaskService.SetRead(System.Int32,System.Boolean)">
+            <summary>Set or clear read flag to the specified InfoItem.</summary>
+            <param name="itemId">ID of the target InfoItem.</param>
+            <param name="read">true for read, false for unread.</param>
+        </member>
+        <member name="M:ThetisCore.Lib.IIpcTaskService.DoUpdateItems(System.String)">
+            <summary>Request to update item informations.</summary>
+            <param name="mode">Request mode.</param>
+        </member>
+        <member name="M:ThetisCore.Lib.IIpcTaskService.RestoreTrash(System.String,System.Int32[])">
+            <summary>Deletes completely specified Information Items.</summary>
+            <param name="generatorId">Generator ID to find RssTargetInfo.</param>
+            <param name="itemIds">Array of IDs of the Information Items.</param>
+        </member>
+        <member name="M:ThetisCore.Lib.IIpcTaskService.BurnUpTrash(System.String,System.Int32[])">
+            <summary>Deletes completely specified Information Items.</summary>
+            <param name="generatorId">Generator ID to find RssTargetInfo.</param>
+            <param name="itemIds">Array of IDs of the Information Items.</param>
+        </member>
+        <member name="M:ThetisCore.Lib.IIpcTaskService.FireEventRssTargetInfosUpdated">
+            <summary>Fires event of updating RSS Target Informations.</summary>
+        </member>
+        <member name="E:ThetisCore.Lib.IIpcTaskService.RssTargetInfosUpdated">
+            <summary>Event of updating RSS Target Informations.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.IpcServiceAgent">
+            <summary>IPC Service agent.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.IpcServiceAgent.GetTaskService">
+            <summary>Gets IpcTaskService interface.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.IpcServiceAgent.GetNaviService">
+            <summary>Gets IpcNaviService interface.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.IpcServiceAgent.GetConfService">
+            <summary>Gets IpcConfService interface.</summary>
+        </member>
+        <member name="T:Sysphonic.Common.ListViewImgItem">
+            <summary>Custom ListViewItem class with Image.</summary>
+        </member>
+        <member name="M:Sysphonic.Common.ListViewImgItem.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="M:Sysphonic.Common.ListViewImgItem.OnSelected(System.Windows.RoutedEventArgs)">
+            <summary>Selected event handler.</summary>
+            <param name="args">Event parameters.</param>
+        </member>
+        <member name="M:Sysphonic.Common.ListViewImgItem.OnUnselected(System.Windows.RoutedEventArgs)">
+            <summary>Unselected event handler.</summary>
+            <param name="args">Event parameters.</param>
+        </member>
+        <member name="P:Sysphonic.Common.ListViewImgItem.Text">
+            <summary>Text.</summary>
+        </member>
+        <member name="P:Sysphonic.Common.ListViewImgItem.SelectedImage">
+            <summary>Selected Image.</summary>
+        </member>
+        <member name="P:Sysphonic.Common.ListViewImgItem.UnselectedImage">
+            <summary>Unselected Image.</summary>
+        </member>
+        <member name="T:Sysphonic.Common.Log">
+            <summary>Log class.</summary>
+        </member>
+        <member name="F:Sysphonic.Common.Log._logger">
+            <summary>Logger instance.</summary>
+        </member>
+        <member name="M:Sysphonic.Common.Log.AddDebug(System.String)">
+            <summary>Adds Debug log.</summary>
+            <param name="log">Log string.</param>
+        </member>
+        <member name="M:Sysphonic.Common.Log.AddInfo(System.String)">
+            <summary>Adds Info log.</summary>
+            <param name="log">Log string.</param>
+        </member>
+        <member name="M:Sysphonic.Common.Log.AddWarn(System.String)">
+            <summary>Adds Warning log.</summary>
+            <param name="log">Log string.</param>
+        </member>
+        <member name="M:Sysphonic.Common.Log.AddError(System.String)">
+            <summary>Adds Error log.</summary>
+            <param name="log">Log string.</param>
+        </member>
+        <member name="M:Sysphonic.Common.Log.AddFatal(System.String)">
+            <summary>Adds Fatal log.</summary>
+            <param name="log">Log string.</param>
+        </member>
+        <member name="T:ThetisCore.Lib.IIpcNaviService">
+            <summary>Interface of the IPC-Remoting service of ThetisCore.Navi process.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.IIpcNaviService.FireEventInfoItemsUpdated">
+            <summary>Fires event of updating list of the information items.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.IIpcNaviService.FireEventDistItemsUpdated">
+            <summary>Fires event of updating list of the distribution items.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.IIpcNaviService.FireEventTaskProcClosing">
+            <summary>Fires event of updating list of the information items.</summary>
+        </member>
+        <member name="E:ThetisCore.Lib.IIpcNaviService.InfoItemsUpdated">
+            <summary>Event of updating list of the information items.</summary>
+        </member>
+        <member name="E:ThetisCore.Lib.IIpcNaviService.DistItemsUpdated">
+            <summary>Event of updating list of the distribution items.</summary>
+        </member>
+        <member name="E:ThetisCore.Lib.IIpcNaviService.TaskProcClosing">
+            <summary>Event of Task process closing.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.Properties.Resources">
+            <summary>
+              ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Properties.Resources.ResourceManager">
+            <summary>
+              このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Properties.Resources.Culture">
+            <summary>
+              厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+              現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Properties.Resources.THETIS_RSS">
+            <summary>
+              Thetis に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Lib.Properties.Resources.ZEPTAIR_DISTRIBUTION">
+            <summary>
+              Zeptair Distribution に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="T:ThetisCore.Lib.RssTargetEntry">
+            <summary>RSS Target Entry class.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry.SETTINGS_FILE_NAME">
+            <summary>Settings file name.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry.STORE_FILE_NAME">
+            <summary>File name which contains the stored items.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry.POLLING_INTERVAL_DEF">
+            <summary>Polling Interval default.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry.POLLING_INTERVAL_MIN">
+            <summary>Min. of Polling Interval.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry._autoRand">
+            <summary>Random Generator.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry._id">
+            <summary>ID.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry._idx">
+            <summary>Target Index.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry._url">
+            <summary>Target URL.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry._title">
+            <summary>RSS Title.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry._userName">
+            <summary>User name for the HTTP Authentication.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry._password">
+            <summary>Password for the HTTP Authentication.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry._pollingInterval">
+            <summary>Polling Interval.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry._dirTitle">
+            <summary>The original title of the name of the info directory.</summary>
+        </member>
+        <member name="F:ThetisCore.Lib.RssTargetEntry._isZeptDist">
+            <summary>Zeptair Dist. flag.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry.SetAuth(System.String,System.String)">
+            <summary>Sets parameters for the HTTP Authentication</summary>
+            <param name="userName">User name.</param>
+            <param name="password">Password.</param>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry.dup">
+            <summary>Duplicates self entry.</summary>
+            <returns>Clone instance of RssTargetEntry.</returns>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry.SaveFeedHistory(Rss.RssFeed)">
+            <summary>Saves the channel information including items.</summary>
+            <param name="feedHistory">RSS Feed which contains history items.</param>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry.LoadFeedHistory">
+            <summary>Loads the stored items as a RSS Feed history.</summary>
+            <returns>A RSS Feed instance which contains stored items.</returns>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry._IsTitleChanged">
+            <summary>Gets if the Title has been changed.</summary>
+            <returns>true if the Title has been changed, false otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry._UpdateTitle">
+            <summary>Updates parameters related to the Title.</summary>
+            <returns>true if succeeded, false otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry.Save">
+            <summary>Saves information about this RSS target.</summary>
+            <returns>true if succeeded, false otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry.Load">
+            <summary>Loads informations about all RSS targets.</summary>
+            <returns>Array of the RSS Informations.</returns>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry.RemoveDir">
+            <summary>Removes information directory related to this instance.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry._EncForPath(System.String)">
+            <summary>Encodes the specified string for a folder name.</summary>
+            <param name="name">Target String.</param>
+            <returns>Encoded string.</returns>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetEntry._DecForPath(System.String)">
+            <summary>Decodes the specified folder name.</summary>
+            <param name="name">Target String.</param>
+            <returns>Dencoded string.</returns>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.Id">
+            <summary>ID</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.Url">
+            <summary>Target URL</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.Idx">
+            <summary>Information Index.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.Title">
+            <summary>RSS Title</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.UserName">
+            <summary>User name for the HTTP Authentication</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.Password">
+            <summary>Password for the HTTP Authentication</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.EncPassword">
+            <summary>Encrypted Password for the HTTP Authentication</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.DirTitle">
+            <summary>Name of the base directory.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.IsZeptDist">
+            <summary>Zeptair Dist. flag.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.PollingInterval">
+            <summary>Polling Interval.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.NewPath">
+            <summary>Information path for this instance.</summary>
+        </member>
+        <member name="P:ThetisCore.Lib.RssTargetEntry.CurPath">
+            <summary>Current path before changing title.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.RssTargetInfosUpdatedEventArgs">
+            <summary>Arguments class of RssTargetInfosUpdated event.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.RssTargetInfosUpdatedEventArgs.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.TaskProcClosingEventArgs">
+            <summary>Arguments class of TaskProcClosing event.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.TaskProcClosingEventArgs.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="T:Sysphonic.Common.TreeViewImgItem">
+            <summary>Custom TreeViewItem class with Image.</summary>
+        </member>
+        <member name="M:Sysphonic.Common.TreeViewImgItem.#ctor(System.String)">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="M:Sysphonic.Common.TreeViewImgItem.OnSelected(System.Windows.RoutedEventArgs)">
+            <summary>Selected event handler.</summary>
+            <param name="args">Event parameters.</param>
+        </member>
+        <member name="M:Sysphonic.Common.TreeViewImgItem.OnUnselected(System.Windows.RoutedEventArgs)">
+            <summary>Unselected event handler.</summary>
+            <param name="args">Event parameters.</param>
+        </member>
+        <member name="P:Sysphonic.Common.TreeViewImgItem.Type">
+            <summary>Type.</summary>
+        </member>
+        <member name="P:Sysphonic.Common.TreeViewImgItem.Text">
+            <summary>Text.</summary>
+        </member>
+        <member name="P:Sysphonic.Common.TreeViewImgItem.AdditionalInfo">
+            <summary>Additional Information.</summary>
+        </member>
+        <member name="P:Sysphonic.Common.TreeViewImgItem.SelectedImage">
+            <summary>Selected Image.</summary>
+        </member>
+        <member name="P:Sysphonic.Common.TreeViewImgItem.UnselectedImage">
+            <summary>Unselected Image.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.DistItemsUpdatedEventArgs">
+            <summary>Arguments class of DistItemsUpdated event.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.DistItemsUpdatedEventArgs.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="T:ThetisCore.Lib.InfoItemsUpdatedEventArgs">
+            <summary>Arguments class of InfoItemsUpdated event.</summary>
+        </member>
+        <member name="M:ThetisCore.Lib.InfoItemsUpdatedEventArgs.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="T:Sysphonic.Common.WpfUtil">
+            <summary>WPF Utility Library class.</summary>
+        </member>
+        <member name="M:Sysphonic.Common.WpfUtil.LoadImage(System.String)">
+            <summary>Loads an image from the specified URI.</summary>
+            <param name="path">Path of the image.</param>
+            <returns>BitmapImage object.</returns>
+        </member>
+    </members>
+</doc>

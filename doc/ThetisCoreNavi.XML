@@ -1,0 +1,885 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ThetisCoreNavi</name>
+    </assembly>
+    <members>
+        <member name="T:ThetisCore.Navi.MenuItemPanel">
+            <summary>Menu Item Panel.</summary>
+            <summary>
+            MenuItemPanel
+            </summary>
+        </member>
+        <member name="M:ThetisCore.Navi.IInfoItemPanel.GetInfoItem">
+            <summary>Gets Information Item related to this panel.</summary>
+            <returns>Information Item related to this panel.</returns>
+        </member>
+        <member name="M:ThetisCore.Navi.IInfoItemPanel.SetSelected(System.Boolean)">
+            <summary>Sets as selected or deselected.</summary>
+            <param name="sel">Selected flag.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.IInfoItemPanel.IsMouseHovering">
+            <summary>Gets if the mouse hovering on this panel.</summary>
+            <returns>true if the mouse hovering on this panel, false otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Navi.IInfoItemPanel.MarkRead">
+            <summary>Marks as read.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.IInfoItemPanel.MarkUnread">
+            <summary>Marks as unread.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.MenuItemPanel._bgBrushOn">
+            <summary>Background brush of the information (high-lighted).</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.MenuItemPanel._bgBrushOff">
+            <summary>Background brush of the information (normal).</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.MenuItemPanel._borderBrushSel">
+            <summary>Border brush of the selected information.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.MenuItemPanel._selected">
+            <summary>Selected flag.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.MenuItemPanel.#ctor(System.String,System.Windows.Input.MouseButtonEventHandler)">
+            <summary>Constructor.</summary>
+            <param name="title">Menu title.</param>
+            <param name="mouseBtnEvtHandler">ex. new MouseButtonEventHandler(wndMain.infoItem_Click)</param>
+        </member>
+        <member name="M:ThetisCore.Navi.MenuItemPanel.GetInfoItem">
+            <summary>Gets Information Item related to this panel.</summary>
+            <returns>Information Item related to this panel.</returns>
+        </member>
+        <member name="M:ThetisCore.Navi.MenuItemPanel.SetSelected(System.Boolean)">
+            <summary>Sets as selected or deselected.</summary>
+            <param name="sel">Selected flag.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.MenuItemPanel.IsMouseHovering">
+            <summary>Gets if the mouse hovering on this panel.</summary>
+            <returns>true if the mouse hovering on this panel, false otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Navi.MenuItemPanel.MarkRead">
+            <summary>Marks as read.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.MenuItemPanel.MarkUnread">
+            <summary>Marks as unread.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.MenuItemPanel.flowDoc_MouseEnter(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>Mouse Enter event handler for each Information Item.</summary>
+            <param name="sender">Flow Document of the Information Item.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.MenuItemPanel.flowDoc_MouseLeave(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>Mouse Leave event handler for each Information Item.</summary>
+            <param name="sender">Flow Document of the Information Item.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.MenuItemPanel.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ThetisCore.Navi.App">
+            <summary>ThetisCore Application class.</summary>
+        </member>
+        <member name="T:ThetisCore.Navi.ResizeTopLeft">
+            <summary>
+            ResizeTopLeft
+            </summary>
+        </member>
+        <member name="F:ThetisCore.Navi.ResizeTopLeft._hideElements">
+            <summary>Configuration for ThetisCoreNavi.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.ResizeTopLeft.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.ResizeTopLeft.HideElements">
+            <summary>Height of the Navi window.</summary>
+        </member>
+        <member name="T:ThetisCore.Navi.WndMain">
+            <summary>Main Window class</summary>
+            <summary>
+            WndMain
+            </summary>
+        </member>
+        <member name="F:ThetisCore.Navi.WndMain._naviConfig">
+            <summary>Configuration for ThetisCoreNavi.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.WndMain._infoManager">
+            <summary>Information Manager.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.WndMain._wndWing">
+            <summary>Wing Window.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.WndMain._selPanel">
+            <summary>Selected panel.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.WndMain._mutex">
+            <summary>Mutex to check if the same process exists.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.WndMain._mutexPanel">
+            <summary>Mutex to do operations on the Panel .</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.WndMain._curMenuButton">
+            <summary>Currently selected Menu Button.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.WndMain._initTimer">
+            <summary>Timer to initialize.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain._CheckProcessDuplicated">
+            <summary>Checks if the same process exists.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.wndMain_Initialized(System.Object,System.EventArgs)">
+            <summary>Initialized event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain._Reload">
+            <summary>Reloads list of information items.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.ClearFeed">
+            <summary>Clears Feed view.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.ClearZeptair">
+            <summary>Clears Zeptair view.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.ForceClose">
+            <summary>Forces to close.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.ipcNaviService_InfoItemsUpdated(System.Object,ThetisCore.Lib.InfoItemsUpdatedEventArgs)">
+            <summary>InfoItemsUpdated event handler of IpcNaviService.</summary>
+            <param name="sender">Sender.</param>
+            <param name="e">Arguments.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.ipcNaviService_TaskProcClosing(System.Object,ThetisCore.Lib.TaskProcClosingEventArgs)">
+            <summary>TaskProcClosing event handler of IpcNaviService.</summary>
+            <param name="sender">Sender.</param>
+            <param name="e">Arguments.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain._AddFeedItems(System.Collections.ArrayList)">
+            <summary>Inserts item to the head of the view.</summary>
+            <param name="item">Array of Information Items to add.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.Init(System.Object)">
+            <summary>Invokes initializing the instance.</summary>
+            <param name="state">State object.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain._Init">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain._LoadThumbs(System.Int32)">
+            <summary>Loads thumbnail images.</summary>
+            <param name="retryCnt">Retry counter.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.RemoveFeedChild(ThetisCore.Task.InfoItem)">
+            <summary>Removes the specified item from Feed view.</summary>
+            <param name="item">Information Item to remove.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.infoItem_Click(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>Click event handler of each information item.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.markRead(ThetisCore.Navi.IInfoItemPanel,System.Boolean)">
+            <summary>Click event handler of each menu item.</summary>
+            <param name="panel">Information Item Panel.</param>
+            <param name="isRead">Flag whether read or not.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.ClearWndWind">
+            <summary>Clears the reference to the Wing Window.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.wndMain_MouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>Mouse Left Button Down event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.UpdateMenuPanel(System.Windows.Controls.Primitives.ToggleButton)">
+            <summary>Updates status of Menu buttons.</summary>
+            <param name="clickedBtn">Clicked ToggleButton.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.btnMenuFeed_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Click event handler of the Feed Menu button.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.btnMenuZeptair_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Click event handler of the Zeptair Menu button.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.wndMain_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>Closing event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.btnClose_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Click event handler of the Close button.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.btnReload_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Click event handler of the Reload button.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.btnCheckAll_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Click event handler of the Check All button.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.wndMain_LocationChanged(System.Object,System.EventArgs)">
+            <summary>Location Changed event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain._onSizeChanged(System.Windows.Controls.StackPanel)">
+            <summary>Common procedure of Size Changed event for StackPanels.</summary>
+            <param name="stp">Target StackPanel.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.stpFeed_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>Size Changed event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.stpZeptair_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>Size Changed event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.viewFeed_KeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>Key Down event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndMain.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.WndMain.InfoManager">
+            <summary>Information Manager</summary>
+        </member>
+        <member name="P:ThetisCore.Navi.WndMain.NaviConfig">
+            <summary>Configuration for ThetisCoreNavi.</summary>
+        </member>
+        <member name="P:ThetisCore.Navi.WndMain.WndWing">
+            <summary>Wing Window.</summary>
+        </member>
+        <member name="T:ThetisCore.Navi.InfoItemPanel_B">
+            <summary>Grid Panel for Information Item.</summary>
+            <summary>
+            InfoItemPanel_B
+            </summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoItemPanel_B._item">
+            <summary>Information Item related to this panel.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoItemPanel_B._bgBrushOn">
+            <summary>Background brush of the information (high-lighted).</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoItemPanel_B._bgBrushOff">
+            <summary>Background brush of the information (normal).</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoItemPanel_B._borderBrushSel">
+            <summary>Border brush of the selected information.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoItemPanel_B._selected">
+            <summary>Selected flag.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_B.#ctor(ThetisCore.Task.InfoItem)">
+            <summary>Constructor.</summary>
+            <param name="item">Information Item related to this panel.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_B.GetInfoItem">
+            <summary>Gets Information Item related to this panel.</summary>
+            <returns>Information Item related to this panel.</returns>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_B.SetSelected(System.Boolean)">
+            <summary>Sets as selected or deselected.</summary>
+            <param name="sel">Selected flag.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_B.IsMouseHovering">
+            <summary>Gets if the mouse hovering on this panel.</summary>
+            <returns>true if the mouse hovering on this panel, false otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_B.MarkRead">
+            <summary>Marks as read.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_B.MarkUnread">
+            <summary>Marks as unread.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_B.flowDoc_MouseEnter(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>Mouse Enter event handler for each Information Item.</summary>
+            <param name="sender">Flow Document of the Information Item.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_B.flowDoc_MouseLeave(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>Mouse Leave event handler for each Information Item.</summary>
+            <param name="sender">Flow Document of the Information Item.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_B.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ThetisCore.Navi.InfoItemViewer">
+            <summary>Information Item Viewer class.</summary>
+            <summary>
+            InfoItemViewer
+            </summary>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemViewer.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemViewer.#ctor(ThetisCore.Task.InfoItem)">
+            <summary>Constructor.</summary>
+            <param name="item">Information Item.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemViewer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ThetisCore.Navi.InfoItemPanel_A">
+            <summary>Grid Panel for Information Item.</summary>
+            <summary>
+            InfoItemPanel_A
+            </summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoItemPanel_A._item">
+            <summary>Information Item related to this panel.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoItemPanel_A._bgBrushOn">
+            <summary>Background brush of the information (high-lighted).</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoItemPanel_A._bgBrushOff">
+            <summary>Background brush of the information (normal).</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoItemPanel_A._borderBrushSel">
+            <summary>Border brush of the selected information.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoItemPanel_A._selected">
+            <summary>Selected flag.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_A.#ctor(ThetisCore.Task.InfoItem)">
+            <summary>Constructor.</summary>
+            <param name="item">Information Item related to this panel.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_A.GetInfoItem">
+            <summary>Gets Information Item related to this panel.</summary>
+            <returns>Information Item related to this panel.</returns>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_A.SetSelected(System.Boolean)">
+            <summary>Sets as selected or deselected.</summary>
+            <param name="sel">Selected flag.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_A.IsMouseHovering">
+            <summary>Gets if the mouse hovering on this panel.</summary>
+            <returns>true if the mouse hovering on this panel, false otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_A.MarkRead">
+            <summary>Marks as read.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_A.MarkUnread">
+            <summary>Marks as unread.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_A.flowDoc_MouseEnter(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>Mouse Enter event handler for each Information Item.</summary>
+            <param name="sender">Flow Document of the Information Item.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_A.flowDoc_MouseLeave(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>Mouse Leave event handler for each Information Item.</summary>
+            <param name="sender">Flow Document of the Information Item.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoItemPanel_A.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ThetisCore.Navi.InfoManager">
+            <summary>Information Manager class.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.InfoManager._infoItems">
+            <summary>Array of the Information Items</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoManager.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoManager.RemoveItems(System.Int32[])">
+            <summary>Removes the specified Information Items.</summary>
+            <param name="itemIds">Array of IDs of the Information Items.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.InfoManager.Load">
+            <summary>Loads Information Items.</summary>
+            <returns>Array of information items to append.</returns>
+        </member>
+        <member name="T:ThetisCore.Navi.IpcNaviService">
+            <summary>IPC-Remoting service of ThetisCore.Navi process.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.IpcNaviService.InitializeLifetimeService">
+            <summary>Obtains a lifetime service object to control the lifetime policy for this instance.</summary>
+            <remarks>
+            You can create the Singleton object by overriding the InitializeLifetimeService method
+            of MarshalByRefObject to return a null reference. This effectively keeps the object 
+            in memory as long as the host application domain is running.
+            http://msdn.microsoft.com/en-us/library/23bk23zc.aspx
+            http://msdn.microsoft.com/en-us/library/system.marshalbyrefobject.initializelifetimeservice.aspx
+            </remarks>
+            <returns>Lease object.</returns>
+        </member>
+        <member name="M:ThetisCore.Navi.IpcNaviService.FireEventInfoItemsUpdated">
+            <summary>Fires event of updating list of the information items.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.IpcNaviService.FireEventDistItemsUpdated">
+            <summary>Fires event of updating list of the distribution items.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.IpcNaviService.FireEventTaskProcClosing">
+            <summary>Fires event of updating list of the information items.</summary>
+        </member>
+        <member name="E:ThetisCore.Navi.IpcNaviService.InfoItemsUpdated">
+            <summary>Event of updating list of the information items.</summary>
+        </member>
+        <member name="E:ThetisCore.Navi.IpcNaviService.DistItemsUpdated">
+            <summary>Event of updating list of the distribution items.</summary>
+        </member>
+        <member name="E:ThetisCore.Navi.IpcNaviService.TaskProcClosing">
+            <summary>Event of Task process closing.</summary>
+        </member>
+        <member name="T:ThetisCore.Navi.NaviConfig">
+            <summary>Configuration class for ThetisCoreNavi.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.NaviConfig._naviWidth">
+            <summary>Width of the Navi window.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.NaviConfig._naviHeight">
+            <summary>Height of the Navi window.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.NaviConfig._wingWidth">
+            <summary>Width of the Wing window.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.NaviConfig._wingHeight">
+            <summary>Height of the Wing window.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.NaviConfig.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.NaviConfig.Load">
+            <summary>Loads Configuration for ThetisCoreNavi.</summary>
+            <returns>Configuration for ThetisCoreNavi.</returns>
+        </member>
+        <member name="P:ThetisCore.Navi.NaviConfig.CONFIG_FILE_NAME">
+            <summary>Configuration file name.</summary>
+        </member>
+        <member name="P:ThetisCore.Navi.NaviConfig.NaviWidth">
+            <summary>Width of the Navi window.</summary>
+        </member>
+        <member name="P:ThetisCore.Navi.NaviConfig.NaviHeight">
+            <summary>Height of the Navi window.</summary>
+        </member>
+        <member name="P:ThetisCore.Navi.NaviConfig.WingWidth">
+            <summary>Width of the Wing window.</summary>
+        </member>
+        <member name="P:ThetisCore.Navi.NaviConfig.WingHeight">
+            <summary>Height of the Wing window.</summary>
+        </member>
+        <member name="T:ThetisCore.Navi.Properties.Resources">
+            <summary>
+              ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.ResourceManager">
+            <summary>
+              このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.Culture">
+            <summary>
+              厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+              現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.AppIcon">
+            <summary>
+              (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.arrow_right_lightpink">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.arrow_right_pink">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.close_off">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.close_on">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.close_pressed">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.COMMAND_NODE">
+            <summary>
+              Commands に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.config">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.CONFIRM_CLEAR_PENDING">
+            <summary>
+              Pending specification will be cleared. Are you sure? に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.CONFIRM_DELETE">
+            <summary>
+               will be deleted. Are you sure? に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.DELETE">
+            <summary>
+              Delete に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.delete_off">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.delete_on">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.delete_pressed">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.ERR_ZEPTMENU_URL_NOT_SET">
+            <summary>
+              Please specify URL of Zeptair Web by &apos;Open Zeptair Web&apos; menu. に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.feed_icon">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.file">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.item_bg">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.MainPanel">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.markread_off">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.MENUITEM_ZEPT_DIST_FOLDERS">
+            <summary>
+              Distribution Packages に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.MENUITEM_ZEPT_HISTORY">
+            <summary>
+              History に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.PROPERTY">
+            <summary>
+              Property に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.UNREAD">
+            <summary>
+              Unread に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.UPDATE_ALL">
+            <summary>
+              Update All に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_1x1">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_1x2">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_1x3">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_2x1">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_2x2">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_2x3">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_3x1">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_3x2">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_3x3">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_4x1">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_4x2">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_4x3">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_5x1">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_5x2">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndMain_5x3">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndWing_1x1">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndWing_1x2">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndWing_1x3">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndWing_2x1">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndWing_2x3">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndWing_3x1">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndWing_3x2">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.Properties.Resources.WndWing_3x3">
+            <summary>
+              型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+            </summary>
+        </member>
+        <member name="T:ThetisCore.Navi.WndWing">
+            <summary>Wing Window class.</summary>
+            <summary>
+            WndWing
+            </summary>
+        </member>
+        <member name="F:ThetisCore.Navi.WndWing._offsetX">
+            <summary>Location offset from the Main Window.</summary>
+        </member>
+        <member name="F:ThetisCore.Navi.WndWing._infoItemPanel">
+            <summary>Reference to the Information Item Panel related to this window.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.ShowInfoItem(ThetisCore.Navi.IInfoItemPanel)">
+            <summary>Sets Information Item.</summary>
+            <param name="panel">Information Item Panel.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.wndWing_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>Closing event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.wndWing_Closed(System.Object,System.EventArgs)">
+            <summary>Closed event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.wndWing_MouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>Mouse Left Button Down event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.wndWing_MouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>Mouse Left Button Up event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.wndWing_Activated(System.Object,System.EventArgs)">
+            <summary>Initialized Changed event handler.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.FollowMain">
+            <summary>Updates location offset.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing._UpdateLocationOffset">
+            <summary>Updates location offset.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.txbUrl_MouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>Mouse Left Button Down event handler of the URL column.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.btnClose_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Click event handler of the Close button.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.btnDelete_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Click event handler of the Delete button.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.chkUnread_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Click event handler of the Unread Checkbox.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.dkpView_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>Size Changed event handler of the Docking Panel.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.btnLink_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>Click event handler of the Link button.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing._ShowBrowser">
+            <summary>Open the URL Link in the browser.</summary>
+        </member>
+        <member name="M:ThetisCore.Navi.WndWing.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Navi.WndWing.InfoItemPanel">
+            <summary>Information Manager</summary>
+        </member>
+        <member name="T:ThetisCore.App">
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:ThetisCore.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ThetisCore.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

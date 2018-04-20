@@ -1,0 +1,75 @@
+﻿<Window x:Uid="Window_1" x:Class="ThetisCore.Conf.WndSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="{Binding Source={StaticResource resources}, Path=TITLE}" Height="391" Width="439"  Loaded="wndSettings_Loaded" Closing="wndSettings_Closing" Background="#ffdab9" ResizeMode="CanResize" ShowInTaskbar="True" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" VerticalContentAlignment="Center">
+    <Grid x:Uid="Grid_1" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Name="grid1">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" Height="47" />
+            <RowDefinition x:Uid="RowDefinition_2" Height="231*" />
+            <RowDefinition x:Uid="RowDefinition_3" Height="65" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Uid="ColumnDefinition_1" Width="22" />
+            <ColumnDefinition x:Uid="ColumnDefinition_2" Width="268*" />
+            <ColumnDefinition x:Uid="ColumnDefinition_3" Width="22" />
+        </Grid.ColumnDefinitions>
+        <TabControl x:Uid="TabControl_1" HorizontalContentAlignment="Stretch" Padding="5" Name="tabSettings" Grid.ColumnSpan="4" Grid.RowSpan="3" Margin="8,6.362,8,56" Background="#ffede4">
+            <TabItem x:Uid="TabItem_1" Header="{Binding Source={StaticResource resources}, Path=GENERAL_CONFIG}" Name="tbiGeneral" IsSelected="True" Background="#ffede4">
+                <StackPanel x:Uid="StackPanel_2" Margin="5,0,5,10" Height="264" Orientation="Vertical">
+                    <StackPanel x:Uid="StackPanel_3" Margin="0" Height="217" Orientation="Vertical">
+                        <GroupBox x:Uid="groupBox1" Header="{Binding Source={StaticResource resources}, Path=NAVI_PANEL}" Height="65" Name="groupBox1" Margin="0,10,0,0">
+                            <StackPanel x:Uid="StackPanel_4" Orientation="Horizontal" Height="31">
+                                <Label x:Uid="Label_1" Height="30" Content="{Binding Source={StaticResource resources}, Path=MAX_ITEMS_TO_DISPLAY}" />
+                                <TextBox x:Uid="txbConfigMaxPanels" Name="txbConfigMaxPanels" Width="43" Height="26" TextChanged="txbConfigMaxPanels_TextChanged"/>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem x:Uid="TabItem_2" Header="{Binding Source={StaticResource resources}, Path=RSS_SITES}" Name="tbiTargets" Background="#ffede4">
+                <Grid x:Uid="Grid_2" Margin="5,10,5,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Uid="ColumnDefinition_4" Width="268*" />
+                        <ColumnDefinition x:Uid="ColumnDefinition_5" Width="103" />
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Uid="lstTargets" Name="lstTargets" />
+                    <StackPanel x:Uid="StackPanel_6" Orientation="Vertical" Grid.Column="1">
+                        <Button x:Uid="btnTargetAdd" Name="btnTargetAdd" Margin="5" MinWidth="80" MaxWidth="80" MinHeight="25" Click="btnTargetAdd_Click" Content="{Binding Source={StaticResource resources}, Path=ADD}" />
+                        <Button x:Uid="btnTargetEdit" Name="btnTargetEdit" Margin="5" MinWidth="80" MaxWidth="80" MinHeight="25" Click="btnTargetEdit_Click" Content="{Binding Source={StaticResource resources}, Path=EDIT}" />
+                        <Button x:Uid="btnTargetDelete" Name="btnTargetDelete" Margin="5" MinWidth="80" MaxWidth="80" MinHeight="25" Click="btnTargetDelete_Click" Content="{Binding Source={StaticResource resources}, Path=DELETE}" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Uid="TabItem_3" Header="{Binding Source={StaticResource resources}, Path=TRASH}" Name="tbiTrash" Background="#ffede4">
+                <Grid x:Uid="Grid_3" Margin="5,10,5,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Uid="ColumnDefinition_8" Width="268*" />
+                        <ColumnDefinition x:Uid="ColumnDefinition_9" Width="109" />
+                    </Grid.ColumnDefinitions>
+                    <TreeView x:Uid="trvTrash" Name="trvTrash">
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate x:Uid="HierarchicalDataTemplate_1">
+                                <StackPanel x:Uid="StackPanel_8" Orientation="Horizontal">
+                                    <Image x:Uid="Image_1" Source="pack://application:,,,/Resources/close_off.png" Margin="0,0,5,0" />
+                                    <TextBlock x:Uid="TextBlock_1" Text="{Binding}" />
+                                </StackPanel>
+                            </HierarchicalDataTemplate>
+                        </TreeView.ItemTemplate>
+                    </TreeView>
+                    <StackPanel x:Uid="StackPanel_9" Orientation="Vertical" Grid.Column="1">
+                        <Button x:Uid="btnTrashRestore" Name="btnTrashRestore" Margin="5" MinWidth="80" MaxWidth="80" MinHeight="25" Click="btnTrashRestore_Click" Content="{Binding Source={StaticResource resources}, Path=RESTORE}" />
+                        <Button x:Uid="btnTrashDelete" Name="btnTrashDelete" Margin="5" MinWidth="80" MaxWidth="80" MinHeight="25" Click="btnTrashDelete_Click" Content="{Binding Source={StaticResource resources}, Path=DELETE}" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <StackPanel x:Uid="StackPanel_10" Orientation="Horizontal" Grid.Column="1" Grid.Row="2" Margin="0,20,0,8" HorizontalAlignment="Center">
+            <Button x:Uid="btnOK" Name="btnOK" Margin="5" MinWidth="80" Click="btnOK_Click">OK</Button>
+            <Button x:Uid="btnCancel" Name="btnCancel" Margin="5" MinWidth="80" Click="btnCancel_Click" Content="{Binding Source={StaticResource resources}, Path=CANCEL}" />
+            <Button x:Uid="btnApply" Name="btnApply" Margin="5" MinWidth="80" Click="btnApply_Click" Content="{Binding Source={StaticResource resources}, Path=APPLY}" />
+        </StackPanel>
+    </Grid>
+</Window>

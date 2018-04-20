@@ -1,0 +1,592 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ThetisCoreTask</name>
+    </assembly>
+    <members>
+        <member name="T:ThetisCore.Task.InfoAttach">
+            <summary>Attachment of Information Item.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.InfoAttach.STATUS_DOWNLOADED">
+            <summary>Status expressions.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.InfoAttach.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:ThetisCore.Task.InfoAttach.Create(Rss.RssEnclosure)">
+            <summary>Creates an instance from a RSS Enclosure.</summary>
+            <param name="enclosure">RSS Enclosure.</param>
+            <returns>Attachment Information.</returns>
+        </member>
+        <member name="P:ThetisCore.Task.InfoAttach.Id">
+            <summary>Id of the Attachment.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoAttach.Name">
+            <summary>Name of the Attachment.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoAttach.Title">
+            <summary>Title of the Attachment.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoAttach.Timestamp">
+            <summary>Timestamp.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoAttach.DigestMd5">
+            <summary>URL of the Attachment.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoAttach.Url">
+            <summary>URL of the Attachment.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoAttach.Type">
+            <summary>MIME-Type of the Attachment.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoAttach.Length">
+            <summary>Length of the Attachment.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoAttach.Status">
+            <summary>Status.</summary>
+        </member>
+        <member name="T:ThetisCore.Task.InfoItem">
+            <summary>Information Item class.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.InfoItem.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:ThetisCore.Task.InfoItem.Create(Rss.RssItem,System.String,ThetisCore.Lib.RssTargetEntry)">
+            <summary>Creates an instance from a RSS Item.</summary>
+            <param name="rssItem">RSS Item as source.</param>
+            <param name="channel">The title of the channel.</param>
+            <param name="targetEntry">RSS Target Entry.</param>
+        </member>
+        <member name="M:ThetisCore.Task.InfoItem.GetPackageDirName">
+            <summary>Gets the name of the Distribution Package Directory.</summary>
+            <returns>Name of the Distribution Package Directory.</returns>
+        </member>
+        <member name="M:ThetisCore.Task.InfoItem.IsFinished">
+            <summary>Checks whether this distribution has been finished or not.</summary>
+            <returns>true if finished, false otherwise.</returns>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.Id">
+            <summary>Id of the item.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.GeneratorId">
+            <summary>Generator ID.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.Title">
+            <summary>Title of the item.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.Link">
+            <summary>URL of the item.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.Guid">
+            <summary>GUID of the item.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.Description">
+            <summary>Item synopsis.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.Author">
+            <summary>Email address of the author of the item.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.Categories">
+            <summary>Provide information regarding the location of the subject matter of the channel in a taxonomy.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.PubDate">
+            <summary>Indicates when the item was published.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.Images">
+            <summary>URIs of attached Images.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.Attachments">
+            <summary>Attachment files.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.SrcTitle">
+            <summary>Source Title.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.Channel">
+            <summary>The title of the channel.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.InfoItem.IsRead">
+            <summary>Read flag.</summary>
+        </member>
+        <member name="T:ThetisCore.Task.InfoManager">
+            <summary>Information Manager class.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.InfoManager._infoItems">
+            <summary>Array of the Information Items</summary>
+        </member>
+        <member name="M:ThetisCore.Task.InfoManager.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:ThetisCore.Task.InfoManager.PostItems(System.Collections.ArrayList,System.Boolean)">
+            <summary>Posts new items to the Main Window.</summary>
+            <param name="items">Array of the RSS Items to post.</param>
+            <param name="wakeup">Flag to wake the Navi-Panel up.</param>
+        </member>
+        <member name="M:ThetisCore.Task.InfoManager.RemoveItems(System.Int32[],System.Boolean)">
+            <summary>Removes the specified Information Items.</summary>
+            <param name="itemIds">Array of IDs of the Information Items.</param>
+            <param name="bLoadSave">Flag to Load and Save the file.</param>
+        </member>
+        <member name="M:ThetisCore.Task.InfoManager.SetRead(System.Int32,System.Boolean)">
+            <summary>Set or clear read flag to the specified InfoItem.</summary>
+            <param name="itemId">ID of the target InfoItem.</param>
+            <param name="read">true for read, false for unread.</param>
+        </member>
+        <member name="M:ThetisCore.Task.InfoManager._Save">
+            <summary>Saves all Information Items.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.InfoManager._Load">
+            <summary>Loads Information Items.</summary>
+        </member>
+        <member name="T:ThetisCore.Task.IpcTaskService">
+            <summary>IPC-Remoting service of ThetisCore.Task process.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.IpcTaskService.InitializeLifetimeService">
+            <summary>Obtains a lifetime service object to control the lifetime policy for this instance.</summary>
+            <remarks>
+            You can create the Singleton object by overriding the InitializeLifetimeService method
+            of MarshalByRefObject to return a null reference. This effectively keeps the object 
+            in memory as long as the host application domain is running.
+            http://msdn.microsoft.com/en-us/library/23bk23zc.aspx
+            http://msdn.microsoft.com/en-us/library/system.marshalbyrefobject.initializelifetimeservice.aspx
+            </remarks>
+            <returns>Lease object.</returns>
+        </member>
+        <member name="M:ThetisCore.Task.IpcTaskService.RemoveInfoItems(System.Int32[])">
+            <summary>Removes InfoItems specified by IDs.</summary>
+            <param name="itemIds">IDs of the target InfoItems.</param>
+        </member>
+        <member name="M:ThetisCore.Task.IpcTaskService.SetRead(System.Int32,System.Boolean)">
+            <summary>Set or clear read flag to the specified InfoItem.</summary>
+            <param name="itemId">ID of the target InfoItem.</param>
+            <param name="read">true for read, false for unread.</param>
+        </member>
+        <member name="M:ThetisCore.Task.IpcTaskService.DoUpdateItems(System.String)">
+            <summary>Request to update item informations.</summary>
+            <param name="mode">Request mode.</param>
+        </member>
+        <member name="M:ThetisCore.Task.IpcTaskService.RestoreTrash(System.String,System.Int32[])">
+            <summary>Deletes completely specified Information Items.</summary>
+            <param name="generatorId">Generator ID to find RssTargetInfo.</param>
+            <param name="itemIds">Array of IDs of the Information Items.</param>
+        </member>
+        <member name="M:ThetisCore.Task.IpcTaskService.BurnUpTrash(System.String,System.Int32[])">
+            <summary>Deletes completely specified Information Items.</summary>
+            <param name="generatorId">Generator ID to find RssTargetInfo.</param>
+            <param name="itemIds">Array of IDs of the Information Items.</param>
+        </member>
+        <member name="M:ThetisCore.Task.IpcTaskService.FireEventRssTargetInfosUpdated">
+            <summary>Fires event of updating RSS Target Informations.</summary>
+        </member>
+        <member name="E:ThetisCore.Task.IpcTaskService.RssTargetInfosUpdated">
+            <summary>Event of updating RSS Target Informations.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.Program.Main">
+            <summary>
+            アプリケーションのメイン エントリ ポイントです。
+            </summary>
+        </member>
+        <member name="T:ThetisCore.Task.Properties.Resources">
+            <summary>
+              ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ResourceManager">
+            <summary>
+              このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.Culture">
+            <summary>
+              厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+              現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ERR_CANNOT_CONFIRM_VALID_LIC_KEY">
+            <summary>
+              Cannot confirm valid License-Key. に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ERR_FAILED_TO_ACTIVATE_SVC">
+            <summary>
+              Failed to activate Zeptair VPN Service. に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ERR_FAILED_TO_DISABLE_SVC">
+            <summary>
+              Failed to disable Zeptair VPN Service. に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ERR_ON_START_AUTH_FAILED">
+            <summary>
+              Authentication Failed. Please confirm your User Name and Password. に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ERR_ON_START_LICKEY">
+            <summary>
+              Invalid License-Key に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ERR_PROCESS_EXISTS">
+            <summary>
+              The process already exists. に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ERR_ZEPT_SVC_START_CANCELED">
+            <summary>
+              &apos;Zeptair VPN Connect&apos; has been canceled. に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.MENU_EXIT">
+            <summary>
+              Exit に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.MENU_NAVI_PANEL">
+            <summary>
+              Navi Panel に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.MENU_RSS_SETTINGS">
+            <summary>
+              RSS Settings に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.MENU_THETIS_BROWSER">
+            <summary>
+              Open Thetis に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.MENU_ZEPT_BROWSER">
+            <summary>
+              Open Zeptair Web に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.MENU_ZEPT_CONNECT">
+            <summary>
+              Zeptair VPN Connect に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.MENU_ZEPT_DISCONNECT">
+            <summary>
+              Zeptair VPN Disconnect に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.MENU_ZEPT_SETTINGS">
+            <summary>
+              Zeptair Settings に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.STATUS_ACTIVATED">
+            <summary>
+              ACTIVATED に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.STATUS_AUTH_FAILED">
+            <summary>
+              Auth. FAILED に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.STATUS_DISABLED">
+            <summary>
+              DISABLED に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ZEPTCMD_CONFIRM_EXEC_NOW">
+            <summary>
+              Execute Now に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ZEPTCMD_CONFIRM_IN_10MIN">
+            <summary>
+              in 10 min. に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ZEPTCMD_CONFIRM_IN_1H">
+            <summary>
+              in 1 hour に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ZEPTCMD_CONFIRM_IN_5H">
+            <summary>
+              in 5 hours に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ZEPTCMD_CONFIRM_LATER">
+            <summary>
+              Show Confirmation later に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ZEPTCMD_CONFIRM_MSG">
+            <summary>
+              ThetisCore is about to execute commands requested from Thetis. に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ZEPTCMD_CONFIRM_TOMORROW">
+            <summary>
+              Tomorrow に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="P:ThetisCore.Task.Properties.Resources.ZEPTCMD_DONE">
+            <summary>
+              Executing commands has been finished. に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="T:ThetisCore.Task.RssHelper">
+            <summary>RSS Helper class.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssHelper.IndexOf(Rss.RssChannelCollection,Rss.RssChannel)">
+            <summary>Gets index of specified RSS Channel in the collection.</summary>
+            <param name="channels">Target collection.</param>
+            <param name="channel">Target channel.</param>
+            <returns>Index if found, -1 otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Task.RssHelper.Contains(Rss.RssChannelCollection,Rss.RssChannel)">
+            <summary>Gets if the specified RSS Channel is in the collection.</summary>
+            <param name="channels">Target collection.</param>
+            <param name="channel">Target channel.</param>
+            <returns>true if found, false otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Task.RssHelper.IndexOf(Rss.RssItemCollection,Rss.RssItem)">
+            <summary>Gets index of specified RSS Item in the collection.</summary>
+            <param name="items">Target collection.</param>
+            <param name="item">Target item.</param>
+            <returns>Index if found, -1 otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Task.RssHelper.Contains(Rss.RssItemCollection,Rss.RssItem)">
+            <summary>Gets if the specified RSS Item is in the collection.</summary>
+            <param name="items">Target collection.</param>
+            <param name="item">Target item.</param>
+            <returns>true if found, false otherwise.</returns>
+        </member>
+        <member name="T:ThetisCore.Task.RssManager">
+            <summary>RSS Manager class. Manages RssWatchers.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.RssManager._status">
+            <summary>Status of this instance.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.RssManager._watchers">
+            <summary>Array of the RSS Watchers.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.RssManager._mutex">
+            <summary>Mutex to operate asynchronously.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssManager.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssManager.AddWatcher(ThetisCore.Task.RssTargetInfo)">
+            <summary>Creates a RSS Watcher for the specified RSS target.</summary>
+            <param name="info">Target Information.</param>
+            <returns>true if succeeded, false otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Task.RssManager.LoadWatchers">
+            <summary>Loads RssWatchers.</summary>
+            <returns>true if succeeded, false otherwise.</returns>
+        </member>
+        <member name="M:ThetisCore.Task.RssManager.Start">
+            <summary>Makes all RssWatchers start watching each URL.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssManager.Stop">
+            <summary>Makes all RssWatchers stop watching each URL.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssManager.PostItems(System.Collections.ArrayList,ThetisCore.Task.RssTargetInfo)">
+            <summary>Posts new items to the Information Manager.</summary>
+            <param name="items">Array of the Information Items to post.</param>
+            <param name="targetInfo">Target Information.</param>
+        </member>
+        <member name="P:ThetisCore.Task.RssManager.TargetInfos">
+            <summary>Target Informations.</summary>
+        </member>
+        <member name="T:ThetisCore.Task.RssManager.Status">
+            <summary>Enumeration of the status about this class.</summary>
+        </member>
+        <member name="T:ThetisCore.Task.RssTargetInfo">
+            <summary>RSS Target Information class.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssTargetInfo.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssTargetInfo.#ctor(ThetisCore.Lib.RssTargetEntry)">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssTargetInfo.Load">
+            <summary>Loads informations about all RSS targets.</summary>
+            <returns>Array of the RSS Informations.</returns>
+        </member>
+        <member name="M:ThetisCore.Task.RssTargetInfo.FindGenerator(System.Collections.IEnumerable,System.String)">
+            <summary>Finds generator of the specified Information Item from an Array.</summary>
+            <param name="targetInfos">Array of RssTargetInfos.</param>
+            <param name="generatorId">GeneratorId of the Information Item.</param>
+            <returns>Generator RssTargetInfo.</returns>
+        </member>
+        <member name="P:ThetisCore.Task.RssTargetInfo.TrashBox">
+            <summary>Throws the specified Information Items into Trash.</summary>
+        </member>
+        <member name="T:ThetisCore.Task.RssWatcher">
+            <summary>RSS Watcher class. Managed by the RssManager for each target.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.RssWatcher._manager">
+            <summary>Reference to the RSS Manager.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.RssWatcher._targetInfo">
+            <summary>Target Information.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.RssWatcher._lastFeed">
+            <summary>Last RSS Feed.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.RssWatcher._feedHistory">
+            <summary>RSS Feed which contains history items.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.RssWatcher._watchTimer">
+            <summary>Timer to keep the polling interval.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.RssWatcher._activated">
+            <summary>Activated flag.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.RssWatcher._mutex">
+            <summary>Mutex to avoid firing timer event after disposing it.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssWatcher.#ctor(ThetisCore.Task.RssManager,ThetisCore.Task.RssTargetInfo)">
+            <summary>Constructor.</summary>
+            <param name="info">Target Information.</param>
+        </member>
+        <member name="M:ThetisCore.Task.RssWatcher.Start">
+            <summary>Starts watching the target URL.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssWatcher.Stop">
+            <summary>Stops watching the target URL.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.RssWatcher.DoRead(System.Object)">
+            <summary>Does read the target URL.</summary>
+            <param name="state"></param>
+        </member>
+        <member name="P:ThetisCore.Task.RssWatcher.TargetInfo">
+            <summary>RSS Target Information.</summary>
+        </member>
+        <member name="T:ThetisCore.Task.TaskMain">
+            <summary>Application Main class.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.TaskMain.APP_TITLE">
+            <summary>Application title.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.TaskMain._self">
+            <summary>Self instance.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.TaskMain._rssManager">
+            <summary>RSS Manager</summary>
+        </member>
+        <member name="F:ThetisCore.Task.TaskMain._notifyIcon">
+            <summary>Notify Icon on the Task Tray</summary>
+        </member>
+        <member name="F:ThetisCore.Task.TaskMain._menuItemSettings">
+            <summary>'RSS Settings' Menu Item</summary>
+        </member>
+        <member name="F:ThetisCore.Task.TaskMain._mutex">
+            <summary>Mutex to check if the same process exists.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.#ctor">
+            <summary>Constructor</summary>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.Init">
+            <summary>Initialize.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain._CheckProcessDuplicated">
+            <summary>Checks if the same process exists.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.ipcTaskService_RssTargetInfosUpdated(System.Object,ThetisCore.Lib.RssTargetInfosUpdatedEventArgs)">
+            <summary>RssTargetInfosUpdated event handler of IpcNaviService.</summary>
+            <param name="sender">Sender.</param>
+            <param name="e">Arguments.</param>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.Restart">
+            <summary>Restarts.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.HideNotifyIcon">
+            <summary>Hides Notify Icon in the task tray.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.menuItemNavi_Click(System.Object,System.EventArgs)">
+            <summary>Click event handler of the Navi item in the menu of the task tray.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.menuItemSettings_Click(System.Object,System.EventArgs)">
+            <summary>Click event handler of the Settings item in the menu of the task tray.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.settingsProcess_Exited(System.Object,System.EventArgs)">
+            <summary>Event handler of Exit from RSS Settings.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.menuItemBrowser_Click(System.Object,System.EventArgs)">
+            <summary>Click event handler of the Open Thetis item in the menu of the task tray.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.menuItemExit_Click(System.Object,System.EventArgs)">
+            <summary>Click event handler of the Exit item in the menu of the task tray.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.notifyIcon_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>Mouse Down event handler of the notify icon.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="M:ThetisCore.Task.TaskMain.notifyIcon_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>Mouse Double Click event handler of the notify icon.</summary>
+            <param name="sender">Sender Object.</param>
+            <param name="e">Mouse Event parameters.</param>
+        </member>
+        <member name="P:ThetisCore.Task.TaskMain.Instance">
+            <summary>Self instance.</summary>
+        </member>
+        <member name="P:ThetisCore.Task.TaskMain.InfoManager">
+            <summary>Information Manager</summary>
+        </member>
+        <member name="P:ThetisCore.Task.TaskMain.RssManager">
+            <summary>RSS Manager</summary>
+        </member>
+        <member name="T:ThetisCore.Task.TrashBox">
+            <summary>Trash Box class.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.TrashBox.TRASH_FILE_NAME">
+            <summary>Trash File name which contains the disposed items.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.TrashBox._path">
+            <summary>Path of the Trash Box.</summary>
+        </member>
+        <member name="F:ThetisCore.Task.TrashBox._infoItems">
+            <summary>Thrown away Information Items.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.TrashBox.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.TrashBox.#ctor(System.String)">
+            <summary>Constructor.</summary>
+            <param name="infoPath">Information Path of the target.</param>
+        </member>
+        <member name="M:ThetisCore.Task.TrashBox.Load">
+            <summary>Loads content of this Trash Box.</summary>
+        </member>
+        <member name="M:ThetisCore.Task.TrashBox.LoadAll">
+            <summary>Loads all Trash Boxes.</summary>
+            <returns>Array of the Trash Boxes.</returns>
+        </member>
+        <member name="M:ThetisCore.Task.TrashBox.Push(System.Collections.IEnumerable)">
+            <summary>Throws the specified Information Items into Trash.</summary>
+            <param name="items">Array of the Information Items.</param>
+        </member>
+        <member name="M:ThetisCore.Task.TrashBox.BurnUp(System.Collections.IEnumerable)">
+            <summary>Deletes completely specified Information Items.</summary>
+            <param name="itemIds">Array of IDs of the Information Items.</param>
+        </member>
+        <member name="M:ThetisCore.Task.TrashBox.Restore(System.Collections.IEnumerable)">
+            <summary>Restore specified Information Items.</summary>
+            <param name="itemIds">Array of IDs of the Information Items.</param>
+        </member>
+        <member name="P:ThetisCore.Task.TrashBox.InfoItems">
+            <summary>Thrown away Information Items.</summary>
+        </member>
+    </members>
+</doc>

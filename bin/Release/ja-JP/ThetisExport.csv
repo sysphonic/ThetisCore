@@ -1,0 +1,9 @@
+﻿ThetisExport.g.en-US.resources:wndmain.baml,TabItem_1:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,タイムカード
+ThetisExport.g.en-US.resources:wndmain.baml,rdoMine:System.Windows.Controls.RadioButton.$Content,RadioButton,True,True,,自分のタイムカード：
+ThetisExport.g.en-US.resources:wndmain.baml,rdoGroup:System.Windows.Controls.RadioButton.$Content,RadioButton,True,True,,グループ指定（管理者のみ）：
+ThetisExport.g.en-US.resources:wndmain.baml,Label_2:System.Windows.Controls.Label.$Content,Label,True,True,,年月：
+ThetisExport.g.en-US.resources:wndmain.baml,Label_3:System.Windows.Controls.Label.$Content,Label,True,True,,グループ：
+ThetisExport.g.en-US.resources:wndmain.baml,Label_4:System.Windows.Controls.Label.$Content,Label,True,True,,メンバー：
+ThetisExport.g.en-US.resources:wndmain.baml,btnSelectAll:System.Windows.Controls.Button.$Content,Button,True,True,,全選択／解除
+ThetisExport.g.en-US.resources:wndmain.baml,btnExpTimecards:System.Windows.Controls.Button.$Content,Button,True,True,,エクスポート実行
+ThetisExport.g.en-US.resources:wndmain.baml,btnClose:System.Windows.Controls.Button.$Content,Button,True,True,,閉じる

@@ -1,0 +1,88 @@
+﻿<Window x:Uid="wndWing" x:Class="ThetisCore.Navi.WndWing"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ThetisCore.Navi="clr-namespace:ThetisCore.Navi"
+    Title="ThetisCore" Height="300" Width="300" Closing="wndWing_Closing" Closed="wndWing_Closed" Background="Transparent" BorderBrush="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip" MouseLeftButtonDown="wndWing_MouseLeftButtonDown" MouseLeftButtonUp="wndWing_MouseLeftButtonUp" Name="wndWing" Activated="wndWing_Activated" ShowInTaskbar="False" BorderThickness="0">
+    <Grid x:Uid="Grid_1">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" Height="40" />
+            <RowDefinition x:Uid="RowDefinition_2" Height="173*" />
+            <RowDefinition x:Uid="RowDefinition_3" Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Uid="ColumnDefinition_1" Width="10" />
+            <ColumnDefinition x:Uid="ColumnDefinition_2" Width="258*" />
+            <ColumnDefinition x:Uid="ColumnDefinition_3" Width="10" />
+        </Grid.ColumnDefinitions>
+        <Image x:Uid="image1" Margin="-1,0,0,0" Name="image1" Stretch="Fill" Source="pack://application:,,,/Resources/WndWing_1x1.png" />
+        <Image x:Uid="image2" Name="image2" Stretch="Fill" Source="pack://application:,,,/Resources/WndWing_1x2.png" Grid.Column="1" />
+        <Image x:Uid="image3" Grid.Column="2" Name="image3" Stretch="Fill" Source="pack://application:,,,/Resources/WndWing_1x3.png" />
+        <Image x:Uid="image4" Margin="-1,0,0,0" Name="image4" Stretch="Fill" Grid.Row="1" Source="pack://application:,,,/Resources/WndWing_2x1.png" />
+        <Image x:Uid="image6" Grid.Column="2" Grid.Row="1" Name="image6" Stretch="Fill" Source="pack://application:,,,/Resources/WndWing_2x3.png" />
+        <Image x:Uid="image7" Grid.Row="2" Name="image7" Stretch="Fill" Source="pack://application:,,,/Resources/WndWing_3x1.png" Margin="-1,0,0,0" />
+        <Image x:Uid="image8" Grid.Column="1" Grid.Row="2" Name="image8" Stretch="Fill" Source="pack://application:,,,/Resources/WndWing_3x2.png" />
+        <Image x:Uid="image9" Grid.Column="2" Grid.Row="2" Name="image9" Stretch="Fill" Source="pack://application:,,,/Resources/WndWing_3x3.png" />
+
+        <ThetisCore.Navi:ResizeTopLeft x:Name="resizeTopLeft" Canvas.Top="0" Canvas.Left="0" DockPanel.Dock="Left" VerticalAlignment="Top"/>
+
+        <TextBlock x:Uid="txbTitle" Name="txbTitle" FontSize="14" Foreground="White" Padding="0" Grid.ColumnSpan="2" Margin="5,1,23,1" Height="18" VerticalAlignment="Top" />
+        <TextBlock x:Uid="txbChannel" Name="txbChannel" FontSize="10.5" Foreground="White" Padding="0" Grid.ColumnSpan="2" Margin="6,18,23,8" />
+        <Button x:Uid="btnClose" Name="btnClose" Grid.Column="1" HorizontalAlignment="Right" Margin="0,7.339,9.387,13.467" Width="18.676" Background="Transparent" Click="btnClose_Click" OverridesDefaultStyle="False" BorderBrush="Transparent" IsHitTestVisible="True" ClipToBounds="True" SnapsToDevicePixels="False" Grid.ColumnSpan="2" Cursor="Hand">
+            <Button.Template>
+                <ControlTemplate x:Uid="ControlTemplate_1" TargetType="{x:Type Button}">
+                    <Image x:Uid="imgClose" HorizontalAlignment="Right" Name="imgClose" Stretch="Fill" Source="pack://application:,,,/Resources/close_off.png" Height="20" Width="20" />
+                    <ControlTemplate.Triggers>
+                        <Trigger x:Uid="Trigger_1" Property="IsMouseOver" Value="true">
+                            <Setter x:Uid="Setter_1" TargetName="imgClose" Property="Source" Value="pack://application:,,,/Resources/close_on.png" />
+                        </Trigger>
+                        <Trigger x:Uid="Trigger_2" Property="IsPressed" Value="true">
+                            <Setter x:Uid="Setter_2" TargetName="imgClose" Property="Source" Value="pack://application:,,,/Resources/close_pressed.png" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+             </Button.Template>
+        </Button>
+        <Rectangle x:Uid="rectangle1" Grid.Column="1" Grid.Row="1" Name="rectangle1" Fill="White" />
+        <TextBlock x:Uid="txbUrl" Grid.Row="1" Padding="0" Name="txbUrl" FontSize="10.5" Foreground="Navy" TextDecorations="None" Cursor="Hand" MouseLeftButtonDown="txbUrl_MouseLeftButtonDown" Grid.Column="1" TextWrapping="Wrap" Margin="24,0,0,3" Height="25" VerticalAlignment="Bottom" />
+        <Button x:Uid="btnLink" Name="btnLink" Grid.Row="1" HorizontalAlignment="Left" Margin="7.336,0,0,4.134" Width="20.677" Background="Transparent" Click="btnLink_Click" OverridesDefaultStyle="False" BorderBrush="Transparent" IsHitTestVisible="True" ClipToBounds="True" SnapsToDevicePixels="False" Cursor="Hand" Height="21.212" VerticalAlignment="Bottom" Grid.ColumnSpan="2">
+            <Button.Template>
+                <ControlTemplate x:Uid="ControlTemplate_2" TargetType="{x:Type Button}">
+                    <Image x:Uid="imgArrow" Name="imgArrow" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="21" Source="pack://application:,,,/Resources/arrow_right_pink.gif"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger x:Uid="Trigger_3" Property="IsMouseOver" Value="true">
+                            <Setter x:Uid="Setter_3" TargetName="imgArrow" Property="Source" Value="pack://application:,,,/Resources/arrow_right_lightpink.gif" />
+                        </Trigger>
+                        <Trigger x:Uid="Trigger_4" Property="IsPressed" Value="true">
+                            <Setter x:Uid="Setter_4" TargetName="imgArrow" Property="Source" Value="pack://application:,,,/Resources/arrow_right_lightpink.gif" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+             </Button.Template>
+        </Button>
+        <Separator x:Uid="separator1" Grid.Row="1" Height="0.667" Margin="0,0,0,31" Name="separator1" VerticalAlignment="Bottom" Grid.Column="1" />
+        <Image x:Uid="image10" Grid.Column="1" Grid.Row="1" Name="image10" Stretch="None" Source="pack://application:,,,/Resources/item_bg.png" Margin="68.034,24.679,72.703,53.36" MinWidth="88" MinHeight="78" />
+        
+        <DockPanel x:Uid="dkpView" Margin="2.667,33.35,2.667,34" Name="dkpView" Grid.ColumnSpan="3" Grid.RowSpan="2" SizeChanged="dkpView_SizeChanged">
+        </DockPanel>
+        <Label x:Uid="lblEmpty" Name="lblEmpty" HorizontalContentAlignment="Center" Margin="8,57,8.004,85" Grid.Column="1" FontSize="14" VerticalContentAlignment="Center" Visibility="Hidden" Grid.Row="1">(Content of the item is not fed.)</Label>
+
+        <Button x:Uid="btnDelete" Name="btnDelete" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Margin="0,10.675,8.004,8.999" Width="18.724" Background="Transparent" Click="btnDelete_Click" OverridesDefaultStyle="False" BorderBrush="Transparent" IsHitTestVisible="True" ClipToBounds="True" SnapsToDevicePixels="False" Cursor="Hand">
+            <Button.Template>
+                <ControlTemplate x:Uid="ControlTemplate_3" TargetType="{x:Type Button}">
+                    <Image x:Uid="imgDelete" Name="imgDelete" HorizontalAlignment="Right" Stretch="Fill" Source="pack://application:,,,/Resources/delete_off.png" Height="20" Width="20" />
+                    <ControlTemplate.Triggers>
+                        <Trigger x:Uid="Trigger_5" Property="IsMouseOver" Value="true">
+                            <Setter x:Uid="Setter_5" TargetName="imgDelete" Property="Source" Value="pack://application:,,,/Resources/delete_on.png" />
+                        </Trigger>
+                        <Trigger x:Uid="Trigger_6" Property="IsPressed" Value="true">
+                            <Setter x:Uid="Setter_6" TargetName="imgDelete" Property="Source" Value="pack://application:,,,/Resources/delete_pressed.png" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+             </Button.Template>
+        </Button>
+        <CheckBox x:Uid="chkUnread" Grid.Column="1" Grid.Row="2" Margin="0,10,33.35,5" Name="chkUnread" Foreground="Black" Padding="3,0,0,0" Click="chkUnread_Click" HorizontalAlignment="Right" Width="70.573">
+            <Label x:Uid="Label_1" Foreground="White" Content="{Binding Source={StaticResource resources}, Path=UNREAD}" />
+        </CheckBox>
+    </Grid>
+</Window>

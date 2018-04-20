@@ -1,0 +1,8 @@
+﻿<Window x:Uid="Window_1" x:Class="ThetisCore.Conf.WndProgress"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="" Height="95" Width="295" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
+    <Grid x:Uid="Grid_1" Background="Aquamarine" ShowGridLines="False" Height="55" Width="272">
+        <Label x:Uid="lblStatus" Margin="17,10,13,10" Name="lblStatus"></Label>
+    </Grid>
+</Window>

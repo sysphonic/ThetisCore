@@ -1,0 +1,141 @@
+﻿<Window x:Uid="wndMain" x:Class="ThetisCore.Navi.WndMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ThetisCore.Navi="clr-namespace:ThetisCore.Navi"
+    Title="ThetisCore" Height="285" Width="210" ResizeMode="CanResizeWithGrip" SizeToContent="Manual" AllowsTransparency="True" WindowStyle="None" Name="wndMain" Background="Transparent" BorderBrush="Transparent" MouseLeftButtonDown="wndMain_MouseLeftButtonDown" Closing="wndMain_Closing" Initialized="wndMain_Initialized" LocationChanged="wndMain_LocationChanged" Activated="wndMain_Activated">
+    <Grid x:Uid="grdMain" Name="grdMain">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" Height="40" />
+            <RowDefinition x:Uid="RowDefinition_2" Height="26.418" />
+            <RowDefinition x:Uid="RowDefinition_3" Height="105.672*" />
+            <RowDefinition x:Uid="RowDefinition_4" Height="24.91" />
+            <RowDefinition x:Uid="RowDefinition_5" Height="55" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Uid="ColumnDefinition_1" Width="20" />
+            <ColumnDefinition x:Uid="ColumnDefinition_2" Width="170*" />
+            <ColumnDefinition x:Uid="ColumnDefinition_3" Width="20" />
+        </Grid.ColumnDefinitions>
+        <Image x:Uid="imgBgTR" Grid.Column="2" Name="imgBgTR" Stretch="Fill" OverridesDefaultStyle="False" Source="pack://application:,,,/Resources/WndMain_1x3.png"></Image>
+        <Image x:Uid="image1" Grid.Column="1" Grid.Row="1" Name="image1" Stretch="Fill" Source="pack://application:,,,/Resources/WndMain_2x2.png"></Image>
+        <Image x:Uid="image2" Name="image2" Stretch="Fill" Source="pack://application:,,,/Resources/WndMain_1x1.png" />
+        <Image x:Uid="image3" Name="image3" Stretch="Fill" Source="pack://application:,,,/Resources/WndMain_1x2.png" Grid.Column="1" />
+        <Image x:Uid="image4" Name="image4" Stretch="Fill"  Source="pack://application:,,,/Resources/WndMain_2x1.png" Grid.Row="1" />
+        <Image x:Uid="image5" Grid.Column="2" Name="image5" Stretch="Fill" Source="pack://application:,,,/Resources/WndMain_2x3.png" Grid.Row="1" />
+        <Image x:Uid="image6" Grid.Row="2" Name="image6" Stretch="Fill" Source="pack://application:,,,/Resources/WndMain_3x1.png" />
+        <Image x:Uid="image7" Grid.Row="2" Name="image7" Stretch="Fill" Source="pack://application:,,,/Resources/WndMain_3x2.png" Grid.Column="1" />
+        <Image x:Uid="image8" Grid.Column="2" Grid.Row="2" Name="image8" Stretch="Fill" Source="pack://application:,,,/Resources/WndMain_3x3.png" />
+        <Image x:Uid="image9" Grid.Row="3" Name="image9" Stretch="Fill"  Source="pack://application:,,,/Resources/WndMain_4x1.png" />
+        <Image x:Uid="image10" Grid.Column="1" Grid.Row="3" Name="image10" Stretch="Fill"  Source="pack://application:,,,/Resources/WndMain_4x2.png" />
+        <Image x:Uid="image11" Grid.Column="2" Grid.Row="3" Name="image11" Stretch="Fill"  Source="pack://application:,,,/Resources/WndMain_4x3.png" />
+        <Image x:Uid="image12" Grid.Row="4" Name="image12" Stretch="Fill"  Source="pack://application:,,,/Resources/WndMain_5x1.png" />
+        <Image x:Uid="image13" Grid.Column="1" Grid.Row="4" Name="image13" Stretch="Fill"  Source="pack://application:,,,/Resources/WndMain_5x2.png" />
+        <Image x:Uid="image14" Grid.Column="2" Grid.Row="4" Name="image14" Stretch="Fill"  Source="pack://application:,,,/Resources/WndMain_5x3.png" />
+        <Image x:Uid="image15" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4" Margin="12.987,0,13.32,51.282" Name="image15" Stretch="Fill" Source="pack://application:,,,/Resources/MainPanel.png" />
+
+        <ThetisCore.Navi:ResizeTopLeft x:Name="resizeTopLeft" Canvas.Top="0" Canvas.Left="0" DockPanel.Dock="Left" VerticalAlignment="Top"/>
+
+        <Grid x:Uid="grdMenu" Name="grdMenu" Grid.Column="1" Margin="5,7,25,3">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Uid="RowDefinition_100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Uid="ColumnDefinition_100" />
+            </Grid.ColumnDefinitions>
+            <Image x:Uid="image16" Name="image16" Margin="0,0,0,0" Stretch="Fill" OverridesDefaultStyle="False" IsHitTestVisible="True" ClipToBounds="True" SnapsToDevicePixels="False" Source="pack://application:,,,/Resources/menu_panel.png" />
+            <StackPanel x:Uid="stpMenuPanel" Name="stpMenuPanel" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+              <ToggleButton x:Uid="btnMenuFeed" Name="btnMenuFeed" HorizontalAlignment="Right" Margin="5,0,0,0" Background="Transparent" Click="btnMenuFeed_Click" OverridesDefaultStyle="False" BorderBrush="Transparent" IsHitTestVisible="True" ClipToBounds="True" SnapsToDevicePixels="False" Cursor="Hand">
+                  <ToggleButton.Template>
+                      <ControlTemplate x:Uid="ControlTemplate_10" TargetType="{x:Type ToggleButton}">
+                          <Image x:Uid="imgFeed" HorizontalAlignment="Right" Name="imgFeed" Stretch="None" Source="pack://application:,,,/Resources/feed_off.png" />
+                          <ControlTemplate.Triggers>
+                              <Trigger x:Uid="Trigger_10" Property="IsMouseOver" Value="true">
+                                  <Setter x:Uid="Setter_10" TargetName="imgFeed" Property="Source" Value="pack://application:,,,/Resources/feed_on.png" />
+                              </Trigger>
+                              <Trigger x:Uid="Trigger_11" Property="IsChecked" Value="true">
+                                  <Setter x:Uid="Setter_11" TargetName="imgFeed" Property="Source" Value="pack://application:,,,/Resources/feed_pressed.png" />
+                              </Trigger>
+                          </ControlTemplate.Triggers>
+                      </ControlTemplate>
+                  </ToggleButton.Template>
+              </ToggleButton>
+              <ToggleButton x:Uid="btnMenuZeptair" Name="btnMenuZeptair" HorizontalAlignment="Right" Margin="5,0,0,0" Background="Transparent" Click="btnMenuZeptair_Click" OverridesDefaultStyle="False" BorderBrush="Transparent" IsHitTestVisible="True" ClipToBounds="True" SnapsToDevicePixels="False" Cursor="Hand">
+                  <ToggleButton.Template>
+                      <ControlTemplate x:Uid="ControlTemplate_11" TargetType="{x:Type ToggleButton}">
+                          <Image x:Uid="imgZeptair" HorizontalAlignment="Right" Name="imgZeptair" Stretch="None" Source="pack://application:,,,/Resources/zeptair_off.png" />
+                          <ControlTemplate.Triggers>
+                              <Trigger x:Uid="Trigger_15" Property="IsMouseOver" Value="true">
+                                  <Setter x:Uid="Setter_15" TargetName="imgZeptair" Property="Source" Value="pack://application:,,,/Resources/zeptair_on.png" />
+                              </Trigger>
+                              <Trigger x:Uid="Trigger_16" Property="IsChecked" Value="true">
+                                  <Setter x:Uid="Setter_16" TargetName="imgZeptair" Property="Source" Value="pack://application:,,,/Resources/zeptair_pressed.png" />
+                              </Trigger>
+                          </ControlTemplate.Triggers>
+                      </ControlTemplate>
+                  </ToggleButton.Template>
+              </ToggleButton>
+            </StackPanel>
+        </Grid>
+        <Button x:Uid="btnClose" Name="btnClose" Grid.Column="1" HorizontalAlignment="Right" Margin="0,8.4,13.863,6.8" Width="18.676" Background="Transparent" Click="btnClose_Click" OverridesDefaultStyle="False" BorderBrush="Transparent" IsHitTestVisible="True" ClipToBounds="True" SnapsToDevicePixels="False" Grid.ColumnSpan="2" Cursor="Hand">
+            <Button.Template>
+                <ControlTemplate x:Uid="ControlTemplate_1" TargetType="{x:Type Button}">
+                    <Image x:Uid="imgClose" HorizontalAlignment="Right" Name="imgClose" Stretch="Fill" Source="pack://application:,,,/Resources/close_off.png" Height="20" Width="20" />
+                    <ControlTemplate.Triggers>
+                        <Trigger x:Uid="Trigger_1" Property="IsMouseOver" Value="true">
+                            <Setter x:Uid="Setter_1" TargetName="imgClose" Property="Source" Value="pack://application:,,,/Resources/close_on.png" />
+                        </Trigger>
+                        <Trigger x:Uid="Trigger_2" Property="IsPressed" Value="true">
+                            <Setter x:Uid="Setter_2" TargetName="imgClose" Property="Source" Value="pack://application:,,,/Resources/close_pressed.png" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <ScrollViewer x:Uid="viewFeed" Name="viewFeed" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4" Margin="12.987,6.4,13.32,51.282" VerticalScrollBarVisibility="Auto" KeyDown="viewFeed_KeyDown">
+            <StackPanel x:Uid="stpFeed" Name="stpFeed" Background="Transparent" CanVerticallyScroll="True" SizeChanged="stpFeed_SizeChanged"/>
+        </ScrollViewer>
+        <ScrollViewer x:Uid="viewZeptair" Name="viewZeptair" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4" Margin="12.987,6.4,13.32,51.282" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Uid="stpZeptair" Name="stpZeptair" Background="Transparent" CanVerticallyScroll="True" SizeChanged="stpZeptair_SizeChanged"/>
+        </ScrollViewer>
+        <Grid x:Uid="grdCtrlPanel" Name="grdCtrlPanel" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="5,20.667,0,0" Grid.Row="4" VerticalAlignment="Top" Width="155">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Uid="RowDefinition_110" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Uid="ColumnDefinition_110" />
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Uid="stpCtrlPanel" Name="stpCtrlPanel" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+              <ToggleButton x:Uid="btnReload" Name="btnReload" HorizontalAlignment="Right" Margin="5,0,0,0" Background="Transparent" Click="btnReload_Click" OverridesDefaultStyle="False" BorderBrush="Transparent" IsHitTestVisible="True" ClipToBounds="True" SnapsToDevicePixels="False" Cursor="Hand">
+                  <ToggleButton.Template>
+                      <ControlTemplate x:Uid="ControlTemplate_20" TargetType="{x:Type ToggleButton}">
+                          <Image x:Uid="imgReload" HorizontalAlignment="Right" Name="imgReload" Stretch="None" Source="pack://application:,,,/Resources/reload.png" />
+                          <ControlTemplate.Triggers>
+                              <Trigger x:Uid="Trigger_20" Property="IsMouseOver" Value="true">
+                                  <Setter x:Uid="Setter_20" TargetName="imgReload" Property="Source" Value="pack://application:,,,/Resources/reload.png" />
+                              </Trigger>
+                              <Trigger x:Uid="Trigger_21" Property="IsChecked" Value="true">
+                                  <Setter x:Uid="Setter_21" TargetName="imgReload" Property="Source" Value="pack://application:,,,/Resources/reload.png" />
+                              </Trigger>
+                          </ControlTemplate.Triggers>
+                      </ControlTemplate>
+                  </ToggleButton.Template>
+              </ToggleButton>
+              <ToggleButton x:Uid="btnCheckAll" Name="btnCheckAll" HorizontalAlignment="Right" Margin="5,0,0,0" Background="Transparent" Click="btnCheckAll_Click" OverridesDefaultStyle="False" BorderBrush="Transparent" IsHitTestVisible="True" ClipToBounds="True" SnapsToDevicePixels="False" Cursor="Hand">
+                  <ToggleButton.Template>
+                      <ControlTemplate x:Uid="ControlTemplate_21" TargetType="{x:Type ToggleButton}">
+                          <Image x:Uid="imgCheckAll" HorizontalAlignment="Right" Name="imgCheckAll" Stretch="None" Source="pack://application:,,,/Resources/check_all.png" />
+                          <ControlTemplate.Triggers>
+                              <Trigger x:Uid="Trigger_25" Property="IsMouseOver" Value="true">
+                                  <Setter x:Uid="Setter_25" TargetName="imgCheckAll" Property="Source" Value="pack://application:,,,/Resources/check_all.png" />
+                              </Trigger>
+                              <Trigger x:Uid="Trigger_26" Property="IsChecked" Value="true">
+                                  <Setter x:Uid="Setter_26" TargetName="imgCheckAll" Property="Source" Value="pack://application:,,,/Resources/check_all.png" />
+                              </Trigger>
+                          </ControlTemplate.Triggers>
+                      </ControlTemplate>
+                  </ToggleButton.Template>
+              </ToggleButton>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

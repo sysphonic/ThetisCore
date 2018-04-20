@@ -1,0 +1,31 @@
+﻿ZeptairClientConf.g.en-US.resources:wndmain.baml,Window_1:System.Windows.Window.Title,Title,True,True,,Zeptair VPN 設定
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TabItem_1:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,ライセンスキー
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_1:System.Windows.Controls.TextBlock.$Content,Text,True,True,,ライセンスキー：
+ZeptairClientConf.g.en-US.resources:wndmain.baml,lblLicKeyDisp:System.Windows.Controls.Label.$Content,Label,True,True,,（指定されていません）
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TabItem_2:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,VPN サーバ
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_2:System.Windows.Controls.TextBlock.$Content,Text,True,True,,サーバ・アドレス：
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_3:System.Windows.Controls.TextBlock.$Content,Text,True,True,,サーバ・ポート番号：
+ZeptairClientConf.g.en-US.resources:wndmain.baml,chkAuth:System.Windows.Controls.CheckBox.$Content,CheckBox,True,True,,認証
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_4:System.Windows.Controls.TextBlock.$Content,Text,True,True,,ユーザー名：
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_5:System.Windows.Controls.TextBlock.$Content,Text,True,True,,パスワード
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TabItem_3:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,VPN 詳細設定
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_31:System.Windows.Controls.TextBlock.$Content,Text,True,True,,サーバに転送するポート（TCPのみ）：
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_32:System.Windows.Controls.TextBlock.$Content,Text,True,True,,削除
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_33:System.Windows.Controls.TextBlock.$Content,Text,True,True,,次にアクセスする場合を除く：
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_34:System.Windows.Controls.TextBlock.$Content,Text,True,True,,"（例： &apos;192.168.1.10&apos; , &apos;10.0.0.1-10.0.0.32&apos;）"
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_35:System.Windows.Controls.TextBlock.$Content,Text,True,True,,削除
+ZeptairClientConf.g.en-US.resources:wndmain.baml,btnRemoveExcept:System.Windows.Controls.Button.$Content,Button,True,True,,&lt;&lt;
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TabItem_4:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,オプション
+ZeptairClientConf.g.en-US.resources:wndmain.baml,chkAutoActivate:System.Windows.Controls.CheckBox.$Content,CheckBox,True,True,,システム起動時に自動的に有効にする
+ZeptairClientConf.g.en-US.resources:wndmain.baml,chkAcceptCmd:System.Windows.Controls.CheckBox.$Content,CheckBox,True,True,,Zeptair管理者による遠隔操作を受け付ける
+ZeptairClientConf.g.en-US.resources:wndmain.baml,chkAdminNames:System.Windows.Controls.ContentControl.Content,CheckBox,True,True,,管理者のユーザー名を指定する（フルネーム不可）
+ZeptairClientConf.g.en-US.resources:wndmain.baml,chkHideSettingsMenu:System.Windows.Controls.CheckBox.$Content,CheckBox,True,True,,&apos;Zeptair 設定&apos; メニュー項目を非表示にする
+ZeptairClientConf.g.en-US.resources:wndmain.baml,btnCancel:System.Windows.Controls.Button.$Content,Button,True,True,,キャンセル
+ZeptairClientConf.g.en-US.resources:wndmain.baml,TextBlock_36:System.Windows.Controls.TextBlock.$Content,Text,True,True,,削除
+ZeptairClientConf.g.en-US.resources:wndapplyserver.baml,Window_10:System.Windows.Window.Title,Title,True,True,,Zeptair クライアント設定
+ZeptairClientConf.g.en-US.resources:wndapplyserver.baml,tbiTarget1:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,確認
+ZeptairClientConf.g.en-US.resources:wndapplyserver.baml,TextBlock_2:System.Windows.Controls.TextBlock.$Content,Text,True,True,,下でチェックした項目にも同じサーバ・アドレス／認証情報を適用する：
+ZeptairClientConf.g.en-US.resources:wndapplyserver.baml,chkApplyToBrowser:System.Windows.Controls.CheckBox.$Content,CheckBox,True,True,,Thetisブラウザ
+ZeptairClientConf.g.en-US.resources:wndapplyserver.baml,chkApplyToRss:System.Windows.Controls.CheckBox.$Content,CheckBox,True,True,,Thetis RSS
+ZeptairClientConf.g.en-US.resources:wndapplyserver.baml,chkApplyToZeptDist:System.Windows.Controls.ContentControl.Content,CheckBox,True,True,,Zeptair 配布
+ZeptairClientConf.g.en-US.resources:wndapplyserver.baml,Button_1:System.Windows.Controls.Button.$Content,Button,True,True,,OK

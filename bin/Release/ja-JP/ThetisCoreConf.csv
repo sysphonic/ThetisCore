@@ -1,0 +1,28 @@
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,Window_1:System.Windows.Window.Title,Title,True,True,,ThetisCore 設定
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,TabItem_1:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,全般
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,groupBox1:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,ナビパネル
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,Label_1:System.Windows.Controls.Label.$Content,Label,True,True,,最大表示項目数 :
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,TabItem_2:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,RSSサイト
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,btnTargetAdd:System.Windows.Controls.Button.$Content,Button,True,True,,追加
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,btnTargetEdit:System.Windows.Controls.Button.$Content,Button,True,True,,編集
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,btnTargetDelete:System.Windows.Controls.Button.$Content,Button,True,True,,削除
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,TabItem_3:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,ごみ箱
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,btnTrashDelete:System.Windows.Controls.Button.$Content,Button,True,True,,削除
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,btnTrashRestore:System.Windows.Controls.Button.$Content,Button,True,True,,元に戻す
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,btnCancel:System.Windows.Controls.Button.$Content,Button,True,True,,キャンセル
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,btnApply:System.Windows.Controls.Button.$Content,Button,True,True,,適用
+ThetisCoreConf.g.en-US.resources:wndtarget.baml,tbiTarget1:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,RSSサイト
+ThetisCoreConf.g.en-US.resources:wndtarget.baml,TextBlock_1:System.Windows.Controls.TextBlock.$Content,Text,True,True,,タイトル :
+ThetisCoreConf.g.en-US.resources:wndtarget.baml,chkAuth:System.Windows.Controls.CheckBox.$Content,CheckBox,True,True,,認証情報
+ThetisCoreConf.g.en-US.resources:wndtarget.baml,TextBlock_3:System.Windows.Controls.TextBlock.$Content,Text,True,True,,ユーザー名 :
+ThetisCoreConf.g.en-US.resources:wndtarget.baml,TextBlock_4:System.Windows.Controls.TextBlock.$Content,Text,True,True,,パスワード :
+ThetisCoreConf.g.en-US.resources:wndtarget.baml,TextBlock_5:System.Windows.Controls.TextBlock.$Content,Text,True,True,,更新チェック間隔（分） :
+ThetisCoreConf.g.en-US.resources:wndtarget.baml,Button_2:System.Windows.Controls.Button.$Content,Button,True,True,,キャンセル
+ThetisCoreConf.g.en-US.resources:wndconfirm.baml,label1:System.Windows.Controls.Label.$Content,Label,True,True,,接続確認 : OK
+ThetisCoreConf.g.en-US.resources:wndconfirm.baml,label2:System.Windows.Controls.Label.$Content,Label,True,True,,次の文言をタイトルに採用しますか？
+ThetisCoreConf.g.en-US.resources:wndtarget.baml,TextBlock_2:System.Windows.Controls.TextBlock.$Content,Text,True,True,,RSS URL :
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,TabItem_4:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,Zeptair 配布
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,btnZeptDistAdd:System.Windows.Controls.Button.$Content,Button,True,True,,追加
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,btnZeptDistEdit:System.Windows.Controls.Button.$Content,Button,True,True,,編集
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,btnZeptDistDelete:System.Windows.Controls.Button.$Content,Button,True,True,,削除
+ThetisCoreConf.g.en-US.resources:wndsettings.baml,txbNeedLicKey:System.Windows.Controls.TextBox.Text,Text,True,True,,この機能を有効にするには、ライセンスキーが必要です。
