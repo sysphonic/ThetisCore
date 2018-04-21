@@ -200,6 +200,9 @@ namespace ThetisCore.Task
             try
             {
                 string fpath = ThetisCore.Lib.Def.INFO_ITEMS_FILE_PATH;
+                if (!File.Exists(fpath)) {
+					CommonUtil.CreateEmptyFile(fpath);
+				}
                 CommonUtil.OpenStreamSafe(fpath, "r",
                         (f) =>
                         {

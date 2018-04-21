@@ -233,5 +233,10 @@ namespace Sysphonic.Common
                 }
             }
         }
+
+        public static void CreateEmptyFile(string fpath)
+        {
+            File.Create(fpath).Dispose();
+        }
     }
 }

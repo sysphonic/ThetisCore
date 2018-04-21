@@ -1,4 +1,4 @@
-ThetisCore
+![ThetisCore](http://sysphonic.com/img/feed-icon-28x28.png) ThetisCore
 ======
 
 ThetisCore is the World-Strongest Opensource Feed Reader.
@@ -7,12 +7,14 @@ ThetisCore is the World-Strongest Opensource Feed Reader.
 
 ## License
 
-Modified BSD License (See LICENSE file)
+Modified BSD License
+(See LICENSE file)
 
 ## Features
 
 * For Windows (.NET Framework 3.5).
-* No need to install. Just start up ThetisCore/bin/Release/ThetisCoreTask.exe
+* No need to install. Use `deploy.bat` (bin\Release) to deploy to C:\ThetisCore
+  Then just start up `ThetisCoreTask.exe`
 * Multiple RSS sites can be registered and different surveillance intervals can be set separately.
 * Supports HTTP Basic authentication
 * Supports SSL (https:// ... )

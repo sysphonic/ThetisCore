@@ -1,9 +1,0 @@
-﻿ThetisBrowser.g.en-US.resources:wndtarget.baml,tbiTarget1:System.Windows.Controls.HeaderedContentControl.Header,Label,True,True,,Thetis 設定
-ThetisBrowser.g.en-US.resources:wndtarget.baml,chkAuth:System.Windows.Controls.CheckBox.$Content,CheckBox,True,True,,ログイン
-ThetisBrowser.g.en-US.resources:wndtarget.baml,TextBlock_3:System.Windows.Controls.TextBlock.$Content,Text,True,True,,ユーザー名 :
-ThetisBrowser.g.en-US.resources:wndtarget.baml,TextBlock_4:System.Windows.Controls.TextBlock.$Content,Text,True,True,,パスワード :
-ThetisBrowser.g.en-US.resources:wndtarget.baml,chkSynTargets:System.Windows.Controls.ContentControl.Content,CheckBox,True,True,,次の設定を上に合わせる:
-ThetisBrowser.g.en-US.resources:wndtarget.baml,chkSynTargetThetisRss:System.Windows.Controls.ContentControl.Content,CheckBox,True,True,,Thetis RSS
-ThetisBrowser.g.en-US.resources:wndtarget.baml,chkSynTargetZeptDist:System.Windows.Controls.ContentControl.Content,CheckBox,True,True,,Zeptair 配布
-ThetisBrowser.g.en-US.resources:wndtarget.baml,Button_1:System.Windows.Controls.Button.$Content,Button,True,True,,OK
-ThetisBrowser.g.en-US.resources:wndtarget.baml,Button_2:System.Windows.Controls.Button.$Content,Button,True,True,,キャンセル

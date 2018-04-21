@@ -7,6 +7,12 @@
         <member name="T:Rss.ExceptionCollection">
             <summary>A strongly typed collection of <see cref="T:System.Exception"/> objects</summary>
         </member>
+        <member name="P:Rss.ExceptionCollection.Item(System.Int32)">
+            <summary>Gets or sets the exception at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
+            <param name="index">The index of the collection to access.</param>
+            <value>A exception at each valid index.</value>
+            <remarks>This method is an indexer that can be used to access the collection.</remarks>
+        </member>
         <member name="M:Rss.ExceptionCollection.Add(System.Exception)">
             <summary>Adds a specified exception to this collection.</summary>
             <param name="exception">The exception to add.</param>
@@ -39,18 +45,19 @@
             <summary>Removes a specified Exception from this collection.</summary>
             <param name="exception">The Exception to remove.</param>
         </member>
-        <member name="P:Rss.ExceptionCollection.Item(System.Int32)">
-            <summary>Gets or sets the exception at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
-            <param name="index">The index of the collection to access.</param>
-            <value>A exception at each valid index.</value>
-            <remarks>This method is an indexer that can be used to access the collection.</remarks>
-        </member>
         <member name="P:Rss.ExceptionCollection.LastException">
             <summary>Returns the last exception added through the Add method.</summary>
             <value>The last exception -or- null if no exceptions exist</value>
         </member>
         <member name="T:Rss.RssCategoryCollection">
             <summary>A strongly typed collection of <see cref="T:Rss.RssCategory"/> objects</summary>
+        </member>
+        <member name="P:Rss.RssCategoryCollection.Item(System.Int32)">
+            <summary>Gets or sets the category at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
+            <param name="index">The index of the collection to access.</param>
+            <value>A category at each valid index.</value>
+            <remarks>This method is an indexer that can be used to access the collection.</remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index.</exception>
         </member>
         <member name="M:Rss.RssCategoryCollection.Add(Rss.RssCategory)">
             <summary>Adds a specified category to this collection.</summary>
@@ -84,15 +91,15 @@
             <summary>Removes a specified category from this collection.</summary>
             <param name="rssCategory">The category to remove.</param>
         </member>
-        <member name="P:Rss.RssCategoryCollection.Item(System.Int32)">
-            <summary>Gets or sets the category at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
-            <param name="index">The index of the collection to access.</param>
-            <value>A category at each valid index.</value>
-            <remarks>This method is an indexer that can be used to access the collection.</remarks>
-            <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index.</exception>
-        </member>
         <member name="T:Rss.RssChannelCollection">
             <summary>A strongly typed collection of <see cref="T:Rss.RssChannel"/> objects</summary>
+        </member>
+        <member name="P:Rss.RssChannelCollection.Item(System.Int32)">
+            <summary>Gets or sets the channel at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
+            <param name="index">The index of the collection to access.</param>
+            <value>A channel at each valid index.</value>
+            <remarks>This method is an indexer that can be used to access the collection.</remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index.</exception>
         </member>
         <member name="M:Rss.RssChannelCollection.Add(Rss.RssChannel)">
             <summary>Adds a specified channel to this collection.</summary>
@@ -126,15 +133,21 @@
             <summary>Removes a specified channel from this collection.</summary>
             <param name="channel">The channel to remove.</param>
         </member>
-        <member name="P:Rss.RssChannelCollection.Item(System.Int32)">
-            <summary>Gets or sets the channel at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
+        <member name="T:Rss.RssFeedCollection">
+            <summary>A strongly typed collection of <see cref="T:Rss.RssFeed"/> objects</summary>
+        </member>
+        <member name="P:Rss.RssFeedCollection.Item(System.Int32)">
+            <summary>Gets or sets the feed at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
             <param name="index">The index of the collection to access.</param>
-            <value>A channel at each valid index.</value>
+            <value>A feed at each valid index.</value>
             <remarks>This method is an indexer that can be used to access the collection.</remarks>
             <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index.</exception>
         </member>
-        <member name="T:Rss.RssFeedCollection">
-            <summary>A strongly typed collection of <see cref="T:Rss.RssFeed"/> objects</summary>
+        <member name="P:Rss.RssFeedCollection.Item(System.String)">
+            <summary>Gets or sets the feed with the given name.<para>In C#, this property is the indexer for the class.</para></summary>
+            <param name="url">The url of the feed to access.</param>
+            <value>A feed at each valid url. If the feed does not exist, null.</value>
+            <remarks>This method is an indexer that can be used to access the collection.</remarks>
         </member>
         <member name="M:Rss.RssFeedCollection.Add(Rss.RssFeed)">
             <summary>Adds a specified feed to this collection.</summary>
@@ -168,21 +181,15 @@
             <summary>Removes a specified category from this collection.</summary>
             <param name="feed">The category to remove.</param>
         </member>
-        <member name="P:Rss.RssFeedCollection.Item(System.Int32)">
-            <summary>Gets or sets the feed at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
-            <param name="index">The index of the collection to access.</param>
-            <value>A feed at each valid index.</value>
-            <remarks>This method is an indexer that can be used to access the collection.</remarks>
-            <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index.</exception>
-        </member>
-        <member name="P:Rss.RssFeedCollection.Item(System.String)">
-            <summary>Gets or sets the feed with the given name.<para>In C#, this property is the indexer for the class.</para></summary>
-            <param name="url">The url of the feed to access.</param>
-            <value>A feed at each valid url. If the feed does not exist, null.</value>
-            <remarks>This method is an indexer that can be used to access the collection.</remarks>
-        </member>
         <member name="T:Rss.RssItemCollection">
             <summary>A strongly typed collection of <see cref="T:Rss.RssItem"/> objects</summary>
+        </member>
+        <member name="P:Rss.RssItemCollection.Item(System.Int32)">
+            <summary>Gets or sets the item at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
+            <param name="index">The index of the collection to access.</param>
+            <value>An item at each valid index.</value>
+            <remarks>This method is an indexer that can be used to access the collection.</remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index.</exception>
         </member>
         <member name="M:Rss.RssItemCollection.Add(Rss.RssItem)">
             <summary>Adds a specified item to this collection.</summary>
@@ -227,15 +234,15 @@
         <member name="M:Rss.RssItemCollection.CalculatePubDates">
             <summary>Calculates the oldest and latest pubdates</summary>
         </member>
-        <member name="P:Rss.RssItemCollection.Item(System.Int32)">
+        <member name="T:Rss.RssModuleCollection">
+            <summary>A strongly typed collection of <see cref="T:Rss.RssModule"/> objects</summary>
+        </member>
+        <member name="P:Rss.RssModuleCollection.Item(System.Int32)">
             <summary>Gets or sets the item at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
             <param name="index">The index of the collection to access.</param>
             <value>An item at each valid index.</value>
             <remarks>This method is an indexer that can be used to access the collection.</remarks>
             <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index.</exception>
-        </member>
-        <member name="T:Rss.RssModuleCollection">
-            <summary>A strongly typed collection of <see cref="T:Rss.RssModule"/> objects</summary>
         </member>
         <member name="M:Rss.RssModuleCollection.Add(Rss.RssModule)">
             <summary>Adds a specified item to this collection.</summary>
@@ -269,15 +276,15 @@
             <summary>Removes a specified item from this collection.</summary>
             <param name="rssModule">The item to remove.</param>
         </member>
-        <member name="P:Rss.RssModuleCollection.Item(System.Int32)">
+        <member name="T:Rss.RssModuleItemCollection">
+            <summary>A strongly typed collection of <see cref="T:Rss.RssModuleItem"/> objects</summary>
+        </member>
+        <member name="P:Rss.RssModuleItemCollection.Item(System.Int32)">
             <summary>Gets or sets the item at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
             <param name="index">The index of the collection to access.</param>
             <value>An item at each valid index.</value>
             <remarks>This method is an indexer that can be used to access the collection.</remarks>
             <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index.</exception>
-        </member>
-        <member name="T:Rss.RssModuleItemCollection">
-            <summary>A strongly typed collection of <see cref="T:Rss.RssModuleItem"/> objects</summary>
         </member>
         <member name="M:Rss.RssModuleItemCollection.Add(Rss.RssModuleItem)">
             <summary>Adds a specified item to this collection.</summary>
@@ -320,15 +327,15 @@
             <param name="itemHashCode">Hash code of the item</param>
             <returns>true if this item is bound to this module, otherwise false</returns>
         </member>
-        <member name="P:Rss.RssModuleItemCollection.Item(System.Int32)">
+        <member name="T:Rss.RssModuleItemCollectionCollection">
+            <summary>A strongly typed collection of <see cref="T:Rss.RssModuleItemCollection"/> objects</summary>
+        </member>
+        <member name="P:Rss.RssModuleItemCollectionCollection.Item(System.Int32)">
             <summary>Gets or sets the item at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
             <param name="index">The index of the collection to access.</param>
             <value>An item at each valid index.</value>
             <remarks>This method is an indexer that can be used to access the collection.</remarks>
             <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index.</exception>
-        </member>
-        <member name="T:Rss.RssModuleItemCollectionCollection">
-            <summary>A strongly typed collection of <see cref="T:Rss.RssModuleItemCollection"/> objects</summary>
         </member>
         <member name="M:Rss.RssModuleItemCollectionCollection.Add(Rss.RssModuleItemCollection)">
             <summary>Adds a specified item to this collection.</summary>
@@ -362,21 +369,8 @@
             <summary>Removes a specified item from this collection.</summary>
             <param name="rssModuleItemCollection">The item to remove.</param>
         </member>
-        <member name="P:Rss.RssModuleItemCollectionCollection.Item(System.Int32)">
-            <summary>Gets or sets the item at a specified index.<para>In C#, this property is the indexer for the class.</para></summary>
-            <param name="index">The index of the collection to access.</param>
-            <value>An item at each valid index.</value>
-            <remarks>This method is an indexer that can be used to access the collection.</remarks>
-            <exception cref="T:System.ArgumentOutOfRangeException">index is not a valid index.</exception>
-        </member>
         <member name="T:Rss.RssChannel">
             <summary>Grouping of related content items on a site</summary>
-        </member>
-        <member name="T:Rss.RssElement">
-            <summary>Base class for all RSS elements</summary>
-        </member>
-        <member name="M:Rss.RssElement.#ctor">
-            <summary>Initialize a new instance of the RssElement class</summary>
         </member>
         <member name="M:Rss.RssChannel.#ctor">
             <summary>Initialize a new instance of the RssChannel class.</summary>
@@ -559,6 +553,33 @@
             <summary>Returns a string representation of the current Object.</summary>
             <returns>The Url of the feed</returns>
         </member>
+        <member name="P:Rss.RssFeed.Channels">
+            <summary>The channels that are contained in the feed.</summary>
+        </member>
+        <member name="P:Rss.RssFeed.Modules">
+            <summary>The modules that the feed adhears to.</summary>
+        </member>
+        <member name="P:Rss.RssFeed.Exceptions">
+            <summary>A collection of all exceptions encountered during the reading of the feed.</summary>
+        </member>
+        <member name="P:Rss.RssFeed.Version">
+            <summary>The Version of the feed.</summary>
+        </member>
+        <member name="P:Rss.RssFeed.ETag">
+            <summary>The server generated hash of the feed.</summary>
+        </member>
+        <member name="P:Rss.RssFeed.LastModified">
+            <summary>The server generated last modfified date and time of the feed.</summary>
+        </member>
+        <member name="P:Rss.RssFeed.Cached">
+            <summary>Indicates this feed has not been changed on the server, and the local copy was returned.</summary>
+        </member>
+        <member name="P:Rss.RssFeed.Url">
+            <summary>Location of the feed</summary>
+        </member>
+        <member name="P:Rss.RssFeed.Encoding">
+            <summary>Encoding of the feed</summary>
+        </member>
         <member name="M:Rss.RssFeed.Read(System.String)">
             <summary>Reads the specified RSS feed</summary>
             <param name="url">The url or filename of the RSS feed</param>
@@ -601,33 +622,6 @@
             <param name="fileName">specified file (including path) If the file exists, it will be truncated with the new content.</param>
             <exception cref="T:System.InvalidOperationException">Feed must contain at least one channel.</exception>
             <exception cref="T:System.InvalidOperationException">Channel must contain at least one item.</exception>
-        </member>
-        <member name="P:Rss.RssFeed.Channels">
-            <summary>The channels that are contained in the feed.</summary>
-        </member>
-        <member name="P:Rss.RssFeed.Modules">
-            <summary>The modules that the feed adhears to.</summary>
-        </member>
-        <member name="P:Rss.RssFeed.Exceptions">
-            <summary>A collection of all exceptions encountered during the reading of the feed.</summary>
-        </member>
-        <member name="P:Rss.RssFeed.Version">
-            <summary>The Version of the feed.</summary>
-        </member>
-        <member name="P:Rss.RssFeed.ETag">
-            <summary>The server generated hash of the feed.</summary>
-        </member>
-        <member name="P:Rss.RssFeed.LastModified">
-            <summary>The server generated last modfified date and time of the feed.</summary>
-        </member>
-        <member name="P:Rss.RssFeed.Cached">
-            <summary>Indicates this feed has not been changed on the server, and the local copy was returned.</summary>
-        </member>
-        <member name="P:Rss.RssFeed.Url">
-            <summary>Location of the feed</summary>
-        </member>
-        <member name="P:Rss.RssFeed.Encoding">
-            <summary>Encoding of the feed</summary>
         </member>
         <member name="T:Rss.RssEnclosure">
             <summary>A reference to an attachment to the item</summary>
@@ -682,9 +676,6 @@
             <summary>Returns a string representation of the current Object.</summary>
             <returns>The item's title, description, or "RssItem" if the title and description are blank.</returns>
         </member>
-        <member name="M:Rss.RssItem.addEnclosure(Rss.RssEnclosure)">
-            <summary>A reference to an attachment to the item</summary>
-        </member>
         <member name="P:Rss.RssItem.Title">
             <summary>Title of the item</summary>
             <remarks>Maximum length is 100 (For RSS 0.91)</remarks>
@@ -712,6 +703,9 @@
         <member name="P:Rss.RssItem.Enclosures">
             <summary>References to attachments of the item</summary>
         </member>
+        <member name="M:Rss.RssItem.addEnclosure(Rss.RssEnclosure)">
+            <summary>A reference to an attachment to the item</summary>
+        </member>
         <member name="P:Rss.RssItem.Guid">
             <summary>A string that uniquely identifies the item</summary>
         </member>
@@ -736,15 +730,6 @@
         <member name="M:Rss.RssModule.#ctor">
             <summary>Initialize a new instance of the RssModule class</summary>
         </member>
-        <member name="M:Rss.RssModule.BindTo(System.Int32)">
-            <summary>Bind a particular channel to this module</summary>
-            <param name="channelHashCode">Hash code of the channel</param>
-        </member>
-        <member name="M:Rss.RssModule.IsBoundTo(System.Int32)">
-            <summary>Check if a particular channel is bound to this module</summary>
-            <param name="channelHashCode">Hash code of the channel</param>
-            <returns>true if this channel is bound to this module, otherwise false</returns>
-        </member>
         <member name="P:Rss.RssModule.ChannelExtensions">
             <summary>Collection of RSSModuleItem that are to be placed in the channel</summary>
         </member>
@@ -756,6 +741,15 @@
         </member>
         <member name="P:Rss.RssModule.NamespaceURL">
             <summary>URL for the given module namespace</summary>
+        </member>
+        <member name="M:Rss.RssModule.BindTo(System.Int32)">
+            <summary>Bind a particular channel to this module</summary>
+            <param name="channelHashCode">Hash code of the channel</param>
+        </member>
+        <member name="M:Rss.RssModule.IsBoundTo(System.Int32)">
+            <summary>Check if a particular channel is bound to this module</summary>
+            <param name="channelHashCode">Hash code of the channel</param>
+            <returns>true if this channel is bound to this module, otherwise false</returns>
         </member>
         <member name="T:Rss.RssModuleItem">
             <summary>A module may contain any number of items (either channel-based or item-based).</summary>
@@ -1059,16 +1053,16 @@
             <exception cref="T:System.Xml.XmlException">Invalid XML syntax in RSS file.</exception>
             <exception cref="T:System.IO.EndOfStreamException">Unable to read an RssElement. Reached the end of the stream.</exception>
         </member>
-        <member name="M:Rss.RssReader.Close">
-            <summary>Closes connection to file.</summary>
-            <remarks>This method also releases any resources held while reading.</remarks>
-        </member>
         <member name="P:Rss.RssReader.Exceptions">
             <summary>A collection of all exceptions the RssReader class has encountered.</summary>
         </member>
         <member name="P:Rss.RssReader.Version">
             <summary>Gets the RSS version of the stream.</summary>
             <value>One of the <see cref="T:Rss.RssVersion"/> values.</value>
+        </member>
+        <member name="M:Rss.RssReader.Close">
+            <summary>Closes connection to file.</summary>
+            <remarks>This method also releases any resources held while reading.</remarks>
         </member>
         <member name="T:Rss.RssWriter">
             <summary>Writes an RSS XML file.</summary>
@@ -1122,6 +1116,19 @@
             <remarks>Writes end elements, and releases connections</remarks>
             <exception cref="T:System.InvalidOperationException">Occurs if the RssWriter is already closed or the caller is attempting to close before writing a channel.</exception>
         </member>
+        <member name="P:Rss.RssWriter.Version">
+            <summary>Gets or sets the RSS version to write.</summary>
+            <exception cref="T:System.InvalidOperationException">Can't change version number after data has been written.</exception>
+        </member>
+        <member name="P:Rss.RssWriter.XmlFormat">
+            <summary>Gets or sets the <see cref="T:System.Xml.Formatting"/> of the XML output.</summary>
+            <exception cref="T:System.InvalidOperationException">Can't change XML formatting after data has been written.</exception>
+        </member>
+        <member name="P:Rss.RssWriter.XmlIndentation">
+            <summary>Gets or sets how indentation to write for each level in the hierarchy when XmlFormat is set to <see cref="F:System.Xml.Formatting.Indented"/></summary>
+            <exception cref="T:System.InvalidOperationException">Can't change XML formatting after data has been written.</exception>
+            <exception cref="T:System.ArgumentException">Setting this property to a negative value.</exception>
+        </member>
         <member name="M:Rss.RssWriter.Write(Rss.RssChannel)">
             <summary>Writes an RSS channel</summary>
             <exception cref="T:System.InvalidOperationException">RssWriter has been closed, and can not be written to.</exception>
@@ -1133,6 +1140,9 @@
             <exception cref="T:System.InvalidOperationException">Either the RssWriter has already been closed, or the caller is attempting to write an RSS item before an RSS channel.</exception>
             <exception cref="T:System.ArgumentNullException">Item must be instanciated with data, before calling Write.</exception>
             <param name="item">RSS item to write</param>
+        </member>
+        <member name="P:Rss.RssWriter.Modules">
+            <summary>RSS modules</summary>
         </member>
         <member name="M:Rss.RssWriter.WriteElement(System.String,System.DateTime,System.Boolean)">
             <summary>Writes an element with the specified local name and value</summary>
@@ -1194,22 +1204,6 @@
             <param name="input">the value of the element</param>
             <param name="required">boolean that determines if input cannot be null</param>
         </member>
-        <member name="P:Rss.RssWriter.Version">
-            <summary>Gets or sets the RSS version to write.</summary>
-            <exception cref="T:System.InvalidOperationException">Can't change version number after data has been written.</exception>
-        </member>
-        <member name="P:Rss.RssWriter.XmlFormat">
-            <summary>Gets or sets the <see cref="T:System.Xml.Formatting"/> of the XML output.</summary>
-            <exception cref="T:System.InvalidOperationException">Can't change XML formatting after data has been written.</exception>
-        </member>
-        <member name="P:Rss.RssWriter.XmlIndentation">
-            <summary>Gets or sets how indentation to write for each level in the hierarchy when XmlFormat is set to <see cref="F:System.Xml.Formatting.Indented"/></summary>
-            <exception cref="T:System.InvalidOperationException">Can't change XML formatting after data has been written.</exception>
-            <exception cref="T:System.ArgumentException">Setting this property to a negative value.</exception>
-        </member>
-        <member name="P:Rss.RssWriter.Modules">
-            <summary>RSS modules</summary>
-        </member>
         <member name="T:Rss.DBBool">
             <summary>Represents Null, False, and True</summary>
             <remarks>Source: Microsoft c# example</remarks>
@@ -1231,6 +1225,18 @@
         </member>
         <member name="M:Rss.DBBool.#ctor(System.Int32)">
             <summary>Private instance constructor. The value parameter must be ・, 0, or 1.</summary>
+        </member>
+        <member name="P:Rss.DBBool.IsNull">
+            <summary>Properties to examine the value of a DBBool.</summary>
+            <remarks>Return true if this DBBool has the given value, false otherwise.</remarks>
+        </member>
+        <member name="P:Rss.DBBool.IsFalse">
+            <summary>Properties to examine the value of a DBBool.</summary>
+            <remarks>Return true if this DBBool has the given value, false otherwise.</remarks>
+        </member>
+        <member name="P:Rss.DBBool.IsTrue">
+            <summary>Properties to examine the value of a DBBool.</summary>
+            <remarks>Return true if this DBBool has the given value, false otherwise.</remarks>
         </member>
         <member name="M:Rss.DBBool.op_Implicit(System.Boolean)~Rss.DBBool">
             <summary>Implicit conversion from bool to DBBool. Maps true to DBBool.True and false to DBBool.False.</summary>
@@ -1295,18 +1301,6 @@
             <exception cref="T:System.InvalidOperationException">Object has not been initialized.</exception>
             <returns>A string containing DBBool.False, DBBool.Null, or DBBool.True</returns>
         </member>
-        <member name="P:Rss.DBBool.IsNull">
-            <summary>Properties to examine the value of a DBBool.</summary>
-            <remarks>Return true if this DBBool has the given value, false otherwise.</remarks>
-        </member>
-        <member name="P:Rss.DBBool.IsFalse">
-            <summary>Properties to examine the value of a DBBool.</summary>
-            <remarks>Return true if this DBBool has the given value, false otherwise.</remarks>
-        </member>
-        <member name="P:Rss.DBBool.IsTrue">
-            <summary>Properties to examine the value of a DBBool.</summary>
-            <remarks>Return true if this DBBool has the given value, false otherwise.</remarks>
-        </member>
         <member name="T:Rss.RssCategory">
             <summary>Provide information regarding the location of the subject matter of the channel in a taxonomy</summary>
         </member>
@@ -1359,6 +1353,12 @@
             <param name="input">Uri to verify</param>
             <returns>RssDefault.Uri if input is null, otherwise input</returns>
             <remarks>Method is used in all properties to prevent a null value</remarks>
+        </member>
+        <member name="T:Rss.RssElement">
+            <summary>Base class for all RSS elements</summary>
+        </member>
+        <member name="M:Rss.RssElement.#ctor">
+            <summary>Initialize a new instance of the RssElement class</summary>
         </member>
         <member name="T:Rss.RssCloudProtocol">
             <summary>All valid Rss Cloud protocols, including Null</summary>

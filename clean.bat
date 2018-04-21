@@ -1,6 +1,6 @@
 @echo off
 
-rem del /S /Q /F .\*.csproj.user
+del /S /Q /F *.csproj.user
 del /S /Q /F .\*.suo
 rd /S /Q .\.vs
 rd /S /Q .\HTMLtoXAMLConverter\bin
