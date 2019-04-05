@@ -1,4 +1,4 @@
-![ThetisCore](http://sysphonic.com/img/feed-icon-28x28.png) ThetisCore
+![ThetisCore](https://sysphonic.github.io/thetis/img/feed-icon-28x28.png) ThetisCore
 ======
 
 ThetisCore is the World-Strongest Opensource Feed Reader.
